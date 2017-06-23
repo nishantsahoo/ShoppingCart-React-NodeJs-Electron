@@ -7,7 +7,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(cors());
 const ProductsRoute = require('./routes/products'); // route for products
-app.use('/myapi/products/', MyApiRoute);
+app.use('/myapi/products/', ProductsRoute);
 const CartRoute = require('./routes/cart'); // route for cart
 app.use('/myapi/cart/', CartRoute);
 
