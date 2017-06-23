@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73be5bdc-180b-4471-8fdc-53e99d5a9919" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cart.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Products/productsTable.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/src/app.jsx" afterPath="$PROJECT_DIR$/Front_End_React_Folder/src/app.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/static/index.html" afterPath="$PROJECT_DIR$/Front_End_React_Folder/static/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -41,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -75,7 +71,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cart.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cart.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -352,18 +348,17 @@
       <option name="presentableId" value="Default" />
       <updated>1498210585656</updated>
       <workItem from="1498210587600" duration="903000" />
-      <workItem from="1498211514199" duration="7033000" />
+      <workItem from="1498211514199" duration="7426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7936000" />
+    <option name="totallyTimeSpent" value="8329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885799" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885799" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09656301" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -530,14 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/components/Products/productsTable.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -552,6 +539,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding />
         </state>
       </provider>
