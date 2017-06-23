@@ -38,4 +38,18 @@ route.post('/delfromcart', (req, res) => {
 res.redirect('/myapi/mycart');
 });
 
+// To count the number of products in the Cart
+route.get('/countproducts', (req, res) => {
+    data.noofproducts().then((count) => {
+    res.send('' + count); // CONVERT INTO A STRING ELSE INTEGERS ARE SENT AS STATUS CODE
+})
+});
+
+// To calculate the total amount of the Cart items
+route.get('/totalamount', (req, res) => {
+    data.totalamount().then((amount) => {
+    res.send('' + amount); // CONVERT INTO A STRING ELSE INTEGERS ARE SENT AS STATUS CODE
+})
+});
+
 // this file is the route file for cart
