@@ -22,7 +22,7 @@ const Product = db.define('products', {
 
 db.sync({}); // executes db.define
 
-const Cart = db.define('carts', {
+const CartProduct = db.define('carts', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -38,14 +38,28 @@ db.sync({}); // executes db.define
 
 function getProducts () { return Product.findAll(); } // end of the function getProducts
 
+function addToProducts(product) // definition of the function addToProducts
+{
+    Product.findById(product.id).then(cartItem => {
+        alert('Product already exists!');
+        return;
+})
+    return Product.create(
+        {
+            name: product.name,
+            price: product.price,
+            quantity: 1,
+        });
+} // end of the function definition
+
 function addToCart (product) // definition of the function addToCart
 {
-    Cart.findById(product.id).then(cartItem => {
+    CartProduct.findById(product.id).then(cartItem => {
         cartItem.increment('quantity', {by: product.quantity});
     cartItem.increment('amount', {by: product.amount});
     return cartItem;
     })
-    return Cart.create(
+    return CartProduct.create(
         {
             id: product.id,
             name: product.name,
@@ -57,15 +71,15 @@ function addToCart (product) // definition of the function addToCart
 
 function getCart() // definition of the function getCart
 {
-    if (Cart.findAll())
-        return Cart.findAll();
+    if (CartProduct.findAll())
+        return CartProduct.findAll();
     else
         return 0;
 } // end of the function getCart
 
 function decrementCart(cartItemID) // definition of the function decrementCart
 {
-    Cart.findById(cartItemID).then(user => {
+    CartProduct.findById(cartItemID).then(user => {
         user.decrement('quantity', {by: 1});
     user.decrement('amount', {by: user.price});
 })
@@ -73,7 +87,7 @@ function decrementCart(cartItemID) // definition of the function decrementCart
 
 function incrementCart(cartItemID) // definition of the function incrementCart
 {
-    Cart.findById(cartItemID).then(user => {
+    CartProduct.findById(cartItemID).then(user => {
         user.increment('quantity', {by: 1});
     user.increment('amount', {by: user.price});
 })
@@ -81,25 +95,25 @@ function incrementCart(cartItemID) // definition of the function incrementCart
 
 function noofproducts() // definition of the function noofproducts
 {
-    if(Cart.sum('quantity'))
-        return Cart.sum('quantity');
+    if(CartProduct.sum('quantity'))
+        return CartProduct.sum('quantity');
     else
         return 0;
 } // end of the function noofproducts
 
 function totalamount() // definition of the function totalamount
 {
-    if(Cart.sum('amount'))
-        return Cart.sum('amount');
+    if(CartProduct.sum('amount'))
+        return CartProduct.sum('amount');
     else
         return 0;
 } // end of the function totalamount
 
-function cartCheckout(data) { Cart.destroy({ where: {}}); } // end of the function cartCheckout
+function cartCheckout(data) { CartProduct.destroy({ where: {}}); } // end of the function cartCheckout
 
 function delFromCart(cartItemID) // definition of the function delFromCart
 {
-    return Cart.destroy(
+    return CartProduct.destroy(
         {
             where:
                 {
