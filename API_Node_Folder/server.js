@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyparser = require('body-parser');
-// const cors=require('cors'); // to use cors
+const cors=require('cors'); // to use cors
 const app = express(); // express object
-// app.use(cors());
+app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 const ProductsRoute = require('./routes/products'); // route for products
