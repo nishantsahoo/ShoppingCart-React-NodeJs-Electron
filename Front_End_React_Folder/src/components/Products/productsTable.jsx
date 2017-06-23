@@ -24,7 +24,6 @@ export default class Products extends React.Component{
     {
         return (
             <div>
-                <p>wtf</p>
                 <table>
                     {this.state.products.map(function(product){
                         return (

@@ -10495,11 +10495,6 @@ var Products = function (_React$Component) {
                 "div",
                 null,
                 _react2.default.createElement(
-                    "p",
-                    null,
-                    "wtf"
-                ),
-                _react2.default.createElement(
                     "table",
                     null,
                     this.state.products.map(function (product) {
