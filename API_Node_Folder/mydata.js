@@ -41,7 +41,6 @@ function getProducts () { return Product.findAll(); } // end of the function get
 function addToProducts(product) // definition of the function addToProducts
 {
     Product.findById(product.id).then(cartItem => {
-        alert('Product already exists!');
         return;
 })
     return Product.create(
@@ -125,6 +124,7 @@ function delFromCart(cartItemID) // definition of the function delFromCart
 module.exports = {
     getProducts,
     addToCart,
+    addToProducts,
     getCart,
     cartCheckout,
     noofproducts,

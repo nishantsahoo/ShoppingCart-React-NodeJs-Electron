@@ -1,19 +1,19 @@
 import React from "react";
 import axios from "axios";
+import Table from "react-bootstrap/es/Table";
+import Button from "react-bootstrap/es/Button";
 
 export default class Products extends React.Component{
 
-    constructor(props){
+    constructor(props)
+    {
         super(props);
         this.state = {products: []};
     }
 
-    componentDidMount(){
+    componentDidMount()
+    {
         var url="http://localhost:9000/myapi/products/getproducts";
-        // var config={};
-        // config.headers={
-        //     "Content-Type":"application/x-www-form-urlencoded"
-        // }
         axios.get(url).then(function(response){
             var products = response.data;
             this.setState({products: products});
@@ -24,17 +24,28 @@ export default class Products extends React.Component{
     {
         return (
             <div>
-                <table>
+                <Table striped bordered condensed hover>
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Add to Cart</td>
+                        </tr>
+                    </thead>
                     {this.state.products.map(function(product){
                         return (
-                        <tr id={product.id}>
-                            <td>{product.name}</td>
-                            <td>{product.price}</td>
-                            <td>{product.quantity}</td>
-                        </tr>
+                            <tbody>
+                                <tr id={product.id}>
+                                    <td id={product.id}>{product.name}</td>
+                                    <td id={product.id}>{product.price}</td>
+                                    <td id={product.id}>{product.quantity}</td>
+                                    <td><Button bsStyle="primary">Add to Cart</Button></td>
+                                </tr>
+                            </tbody>
                         )
                     })}
-                </table>
+                </Table>
             </div>
 
     ) }

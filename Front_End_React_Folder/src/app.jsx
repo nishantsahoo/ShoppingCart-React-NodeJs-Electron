@@ -5,7 +5,8 @@ import Products from "./components/Products/productsTable";
 class App extends React.Component // definition of the class App
 {
     render() // definition of the function render
-    { return(
+    {
+        return(
         <Products/>
     );
     }
