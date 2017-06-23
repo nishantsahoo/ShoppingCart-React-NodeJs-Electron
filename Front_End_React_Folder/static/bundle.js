@@ -11451,6 +11451,10 @@ var _productsTable = __webpack_require__(89);
 
 var _productsTable2 = _interopRequireDefault(_productsTable);
 
+var _cartTable = __webpack_require__(313);
+
+var _cartTable2 = _interopRequireDefault(_cartTable);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -11474,7 +11478,12 @@ var App = function (_React$Component) {
         key: "render",
         value: function render() // definition of the function render
         {
-            return _react2.default.createElement(_productsTable2.default, null);
+            return _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(_productsTable2.default, null),
+                _react2.default.createElement(_cartTable2.default, null)
+            );
         }
     }]);
 
@@ -26053,11 +26062,11 @@ Table.defaultProps = defaultProps;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Size; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return SIZE_MAP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Size; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SIZE_MAP; });
 /* unused harmony export DEVICE_SIZES */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return State; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Style; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return State; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Style; });
 var Size = {
   LARGE: 'large',
   SMALL: 'small',
@@ -26203,7 +26212,7 @@ var bsSizes = curry(function (sizes, defaultSize, Component) {
 
   var values = [];
   existing.forEach(function (size) {
-    var mappedSize = __WEBPACK_IMPORTED_MODULE_4__StyleConfig__["d" /* SIZE_MAP */][size];
+    var mappedSize = __WEBPACK_IMPORTED_MODULE_4__StyleConfig__["a" /* SIZE_MAP */][size];
     if (mappedSize && mappedSize !== size) {
       values.push(mappedSize);
     }
@@ -26237,7 +26246,7 @@ function getClassSet(props) {
   var classes = (_classes = {}, _classes[prefix(props)] = true, _classes);
 
   if (props.bsSize) {
-    var bsSize = __WEBPACK_IMPORTED_MODULE_4__StyleConfig__["d" /* SIZE_MAP */][props.bsSize] || props.bsSize;
+    var bsSize = __WEBPACK_IMPORTED_MODULE_4__StyleConfig__["a" /* SIZE_MAP */][props.bsSize] || props.bsSize;
     classes[prefix(props, bsSize)] = true;
   }
 
@@ -26497,7 +26506,7 @@ var Button = function (_React$Component) {
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
 
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__utils_bootstrapUtils__["d" /* bsClass */])('btn', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__utils_bootstrapUtils__["e" /* bsSizes */])([__WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["a" /* Size */].LARGE, __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["a" /* Size */].SMALL, __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["a" /* Size */].XSMALL], __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__utils_bootstrapUtils__["f" /* bsStyles */])([].concat(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_values___default()(__WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["b" /* State */]), [__WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["c" /* Style */].DEFAULT, __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["c" /* Style */].PRIMARY, __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["c" /* Style */].LINK]), __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["c" /* Style */].DEFAULT, Button))));
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__utils_bootstrapUtils__["d" /* bsClass */])('btn', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__utils_bootstrapUtils__["e" /* bsSizes */])([__WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["b" /* Size */].LARGE, __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["b" /* Size */].SMALL, __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["b" /* Size */].XSMALL], __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__utils_bootstrapUtils__["f" /* bsStyles */])([].concat(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_values___default()(__WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["c" /* State */]), [__WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["d" /* Style */].DEFAULT, __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["d" /* Style */].PRIMARY, __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["d" /* Style */].LINK]), __WEBPACK_IMPORTED_MODULE_11__utils_StyleConfig__["d" /* Style */].DEFAULT, Button))));
 
 /***/ }),
 /* 311 */
@@ -26666,6 +26675,146 @@ function createChainableTypeChecker(validate) {
 
   return chainedCheckType;
 }
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(51);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(91);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _Table = __webpack_require__(303);
+
+var _Table2 = _interopRequireDefault(_Table);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Products = function (_React$Component) {
+    _inherits(Products, _React$Component);
+
+    function Products(props) {
+        _classCallCheck(this, Products);
+
+        var _this = _possibleConstructorReturn(this, (Products.__proto__ || Object.getPrototypeOf(Products)).call(this, props));
+
+        _this.state = { products: [] };
+        return _this;
+    }
+
+    _createClass(Products, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            var url = "http://localhost:9000/myapi/cart/getcart";
+            _axios2.default.get(url).then(function (response) {
+                var products = response.data;
+                this.setState({ products: products });
+            }.bind(this));
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            if (this.state.products == "") {
+                return _react2.default.createElement(
+                    "p",
+                    null,
+                    "Cart is empty"
+                );
+            } else {
+                return _react2.default.createElement(
+                    "div",
+                    null,
+                    _react2.default.createElement(
+                        _Table2.default,
+                        { striped: true, bordered: true, condensed: true, hover: true },
+                        _react2.default.createElement(
+                            "thead",
+                            null,
+                            _react2.default.createElement(
+                                "tr",
+                                null,
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "Name"
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "Price"
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "Quantity"
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "Amount"
+                                )
+                            )
+                        ),
+                        this.state.products.map(function (product) {
+                            console.log(product);
+                            return _react2.default.createElement(
+                                "tbody",
+                                null,
+                                _react2.default.createElement(
+                                    "tr",
+                                    { id: product.id },
+                                    _react2.default.createElement(
+                                        "td",
+                                        { id: product.id },
+                                        product.name
+                                    ),
+                                    _react2.default.createElement(
+                                        "td",
+                                        { id: product.id },
+                                        product.price
+                                    ),
+                                    _react2.default.createElement(
+                                        "td",
+                                        { id: product.id },
+                                        product.quantity
+                                    ),
+                                    _react2.default.createElement(
+                                        "td",
+                                        { id: product.id },
+                                        product.amount
+                                    )
+                                )
+                            );
+                        })
+                    )
+                );
+            }
+        }
+    }]);
+
+    return Products;
+}(_react2.default.Component);
+
+exports.default = Products;
 
 /***/ })
 /******/ ]);

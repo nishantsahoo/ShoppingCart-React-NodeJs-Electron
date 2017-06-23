@@ -1,13 +1,17 @@
 import React from "react";
 import * as ReactDOM from "react-dom";
 import Products from "./components/Products/productsTable";
+import Cart from "./components/Cart/cartTable";
 
 class App extends React.Component // definition of the class App
 {
     render() // definition of the function render
     {
         return(
-        <Products/>
+            <div>
+                <Products/>
+                <Cart/>
+            </div>
     );
     }
 } // end of the class definition
