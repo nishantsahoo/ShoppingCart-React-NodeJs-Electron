@@ -53,3 +53,5 @@ route.get('/totalamount', (req, res) => {
 });
 
 // this file is the route file for cart
+
+module.exports = route;
