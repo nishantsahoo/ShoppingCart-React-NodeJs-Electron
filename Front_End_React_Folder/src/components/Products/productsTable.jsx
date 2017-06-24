@@ -20,9 +20,10 @@ export default class Products extends React.Component // definition of the class
         }.bind(this));
     } // end of the function definition
 
-    addtocart() // definition of the function addtocart
+    addtocart(event) // definition of the function addtocart
     {
-        alert('Add to cart');
+        alert('Add to cart: ' + event.target.name);
+        console.log('Add to cart: ' + event.target.name);
     } // end of the function addtocart
 
     render() // definition of the function render
@@ -45,7 +46,7 @@ export default class Products extends React.Component // definition of the class
                                     <td id={product.id}>{product.name}</td>
                                     <td id={product.id}>{product.price}</td>
                                     <td id={product.id}><button style={{float: 'left'}}>-</button>{product.quantity}<button style={{float: 'right'}}>+</button></td>
-                                    <td><Button bsStyle="primary" id={product.id} onClick={this.addtocart.bind(this)}>Add to Cart</Button></td>
+                                    <td><Button bsStyle="primary" name={product.name} id={product.id} onClick={this.addtocart.bind(this)}>Add to Cart</Button></td>
                                 </tr>
                             </tbody>
                         );

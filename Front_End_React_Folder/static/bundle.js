@@ -12445,9 +12445,10 @@ var Products = function (_React$Component) {
 
     }, {
         key: "addtocart",
-        value: function addtocart() // definition of the function addtocart
+        value: function addtocart(event) // definition of the function addtocart
         {
-            alert('Add to cart');
+            alert('Add to cart: ' + event.target.name);
+            console.log('Add to cart: ' + event.target.name);
         } // end of the function addtocart
 
     }, {
@@ -12525,7 +12526,7 @@ var Products = function (_React$Component) {
                                     null,
                                     _react2.default.createElement(
                                         _Button2.default,
-                                        { bsStyle: "primary", id: product.id, onClick: this.addtocart.bind(this) },
+                                        { bsStyle: "primary", name: product.name, id: product.id, onClick: this.addtocart.bind(this) },
                                         "Add to Cart"
                                     )
                                 )
