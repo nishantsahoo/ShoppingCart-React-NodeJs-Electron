@@ -12429,6 +12429,7 @@ var Products = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Products.__proto__ || Object.getPrototypeOf(Products)).call(this, props));
 
         _this.state = { products: [] };
+        _this.onChange = _this.onChange.bind(_this);
         return _this;
     } // end of the function definition
 
@@ -12444,11 +12445,11 @@ var Products = function (_React$Component) {
         } // end of the function definition
 
     }, {
-        key: "addtocart",
-        value: function addtocart(event) // definition of the function addtocart
+        key: "onChange",
+        value: function onChange(event) // definition of the function addtocart
         {
-            alert('Add to cart: ' + event.target.name);
-            console.log('Add to cart: ' + event.target.name);
+            alert('On change: ' + event.target.name + ' ' + event.target.id);
+            console.log('On change: ' + event.target.name, event.target.id);
         } // end of the function addtocart
 
     }, {
@@ -12457,82 +12458,91 @@ var Products = function (_React$Component) {
         {
             return _react2.default.createElement(
                 "div",
-                { style: { width: '50%', height: '50%', overflow: 'true' } },
+                null,
                 _react2.default.createElement(
-                    _Table2.default,
-                    { striped: true, bordered: true, condensed: true, hover: true },
+                    "h1",
+                    null,
+                    "Products Cart"
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { style: { width: '55%', marginLeft: '22.5%' } },
                     _react2.default.createElement(
-                        "thead",
-                        null,
+                        _Table2.default,
+                        { striped: true, bordered: true, condensed: true, hover: true },
                         _react2.default.createElement(
-                            "tr",
-                            { style: { textAlign: 'center' } },
-                            _react2.default.createElement(
-                                "td",
-                                null,
-                                "Name"
-                            ),
-                            _react2.default.createElement(
-                                "td",
-                                null,
-                                "Price"
-                            ),
-                            _react2.default.createElement(
-                                "td",
-                                null,
-                                "Quantity"
-                            ),
-                            _react2.default.createElement(
-                                "td",
-                                null,
-                                "Add to Cart"
-                            )
-                        )
-                    ),
-                    this.state.products.map(function (product) {
-                        return _react2.default.createElement(
-                            "tbody",
+                            "thead",
                             null,
                             _react2.default.createElement(
                                 "tr",
-                                { style: { textAlign: 'center' }, id: product.id },
+                                { style: { textAlign: 'center' } },
                                 _react2.default.createElement(
                                     "td",
-                                    { id: product.id },
-                                    product.name
-                                ),
-                                _react2.default.createElement(
-                                    "td",
-                                    { id: product.id },
-                                    product.price
-                                ),
-                                _react2.default.createElement(
-                                    "td",
-                                    { id: product.id },
-                                    _react2.default.createElement(
-                                        "button",
-                                        { style: { float: 'left' } },
-                                        "-"
-                                    ),
-                                    product.quantity,
-                                    _react2.default.createElement(
-                                        "button",
-                                        { style: { float: 'right' } },
-                                        "+"
-                                    )
+                                    null,
+                                    "Name"
                                 ),
                                 _react2.default.createElement(
                                     "td",
                                     null,
-                                    _react2.default.createElement(
-                                        _Button2.default,
-                                        { bsStyle: "primary", name: product.name, id: product.id, onClick: this.addtocart.bind(this) },
-                                        "Add to Cart"
-                                    )
+                                    "Price"
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "Quantity"
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "Add to Cart"
                                 )
                             )
-                        );
-                    }.bind(this))
+                        ),
+                        _react2.default.createElement(
+                            "tbody",
+                            { style: { overflowY: 'auto', height: '50%' } },
+                            this.state.products.map(function (product) {
+                                return _react2.default.createElement(
+                                    "tr",
+                                    { style: { textAlign: 'center' } },
+                                    _react2.default.createElement(
+                                        "td",
+                                        null,
+                                        product.name
+                                    ),
+                                    _react2.default.createElement(
+                                        "td",
+                                        null,
+                                        product.price
+                                    ),
+                                    _react2.default.createElement(
+                                        "td",
+                                        null,
+                                        _react2.default.createElement(
+                                            "button",
+                                            { name: 'minus', id: product.id, onClick: this.onChange, style: { float: 'left' } },
+                                            "-"
+                                        ),
+                                        product.quantity,
+                                        _react2.default.createElement(
+                                            "button",
+                                            { name: 'plus', id: product.id, onClick: this.onChange, style: { float: 'right' } },
+                                            "+"
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        "td",
+                                        null,
+                                        _react2.default.createElement(
+                                            _Button2.default,
+                                            { bsStyle: "primary", name: 'addtocart', id: product.id, onClick: this.onChange },
+                                            "Add to Cart"
+                                        )
+                                    )
+                                );
+                            }.bind(this))
+                        )
+                    )
                 )
             );
         } // end of the function definition
