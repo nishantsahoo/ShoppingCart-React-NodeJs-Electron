@@ -12448,8 +12448,18 @@ var Products = function (_React$Component) {
         key: "onChange",
         value: function onChange(event) // definition of the function addtocart
         {
-            alert('On change: ' + event.target.name + ' ' + event.target.id);
-            console.log('On change: ' + event.target.name, event.target.id);
+            // alert('On change: ' + event.target.name + ' ' + event.target.id);
+            // console.log('On change: ' + event.target.name, event.target.id);
+            if (event.target.name == "plus") {
+                var quantity = +$('quantity[id=' + event.target.id + ']').text();
+                $('quantity[id=' + event.target.id + ']').text(++quantity);
+            }
+            if (event.target.name == "minus") {
+                var quantity = +$('quantity[id=' + event.target.id + ']').text();
+                if (quantity > 1) {
+                    $('quantity[id=' + event.target.id + ']').text(--quantity);
+                }
+            }
         } // end of the function addtocart
 
     }, {
@@ -12462,11 +12472,11 @@ var Products = function (_React$Component) {
                 _react2.default.createElement(
                     "h1",
                     null,
-                    "Products Cart"
+                    "Products"
                 ),
                 _react2.default.createElement(
                     "div",
-                    { style: { width: '55%', marginLeft: '22.5%' } },
+                    { style: { width: '50%', marginLeft: '25%' } },
                     _react2.default.createElement(
                         _Table2.default,
                         { striped: true, bordered: true, condensed: true, hover: true },
@@ -12513,7 +12523,11 @@ var Products = function (_React$Component) {
                                     _react2.default.createElement(
                                         "td",
                                         null,
-                                        product.price
+                                        _react2.default.createElement(
+                                            "price",
+                                            null,
+                                            product.price
+                                        )
                                     ),
                                     _react2.default.createElement(
                                         "td",
@@ -12523,7 +12537,11 @@ var Products = function (_React$Component) {
                                             { name: 'minus', id: product.id, onClick: this.onChange, style: { float: 'left' } },
                                             "-"
                                         ),
-                                        product.quantity,
+                                        _react2.default.createElement(
+                                            "quantity",
+                                            { id: product.id },
+                                            product.quantity
+                                        ),
                                         _react2.default.createElement(
                                             "button",
                                             { name: 'plus', id: product.id, onClick: this.onChange, style: { float: 'right' } },

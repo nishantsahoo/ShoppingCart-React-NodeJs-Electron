@@ -23,16 +23,29 @@ export default class Products extends React.Component // definition of the class
 
     onChange(event) // definition of the function addtocart
     {
-        alert('On change: ' + event.target.name + ' ' + event.target.id);
-        console.log('On change: ' + event.target.name, event.target.id);
+        // alert('On change: ' + event.target.name + ' ' + event.target.id);
+        // console.log('On change: ' + event.target.name, event.target.id);
+        if(event.target.name == "plus")
+        {
+            var quantity = +$('quantity[id=' + event.target.id + ']').text();
+            $('quantity[id=' + event.target.id + ']').text(++quantity);
+        }
+        if(event.target.name == "minus")
+        {
+            var quantity = +$('quantity[id=' + event.target.id + ']').text();
+            if(quantity>1)
+            {
+                $('quantity[id=' + event.target.id + ']').text(--quantity);
+            }
+        }
     } // end of the function addtocart
 
     render() // definition of the function render
     {
         return (
             <div>
-                <h1>Products Cart</h1>
-                <div style={{width: '55%', marginLeft: '22.5%'}}>
+                <h1>Products</h1>
+                <div style={{width: '50%', marginLeft: '25%'}}>
                     <Table striped bordered condensed hover>
                         <thead>
                             <tr style={{textAlign: 'center'}}>
@@ -47,11 +60,10 @@ export default class Products extends React.Component // definition of the class
                             return (
                                     <tr style={{textAlign: 'center'}}>
                                         <td>{product.name}</td>
-                                        <td>{product.price}</td>
-                                        <td><button name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button>{product.quantity}<button name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
+                                        <td><price>{product.price}</price></td>
+                                        <td><button name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
                                         <td><Button bsStyle="primary" name={'addtocart'} id={product.id} onClick={this.onChange}>Add to Cart</Button></td>
                                     </tr>
-
                             );
                         }.bind(this))}
                         </tbody>
