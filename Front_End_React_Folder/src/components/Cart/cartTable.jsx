@@ -2,24 +2,24 @@ import React from "react";
 import axios from "axios";
 import Table from "react-bootstrap/es/Table";
 
-export default class Products extends React.Component{
-
-    constructor(props)
+export default class Products extends React.Component // definition of the class Products
+{
+    constructor(props) // definition of the constructor
     {
         super(props);
         this.state = {products: []};
-    }
+    } // end of the function definition
 
-    componentDidMount()
+    componentDidMount() // definition of the function componentDidMount
     {
         var url="http://localhost:9000/myapi/cart/getcart";
         axios.get(url).then(function(response){
             var products = response.data;
             this.setState({products: products});
         }.bind(this))
-    }
+    } // end of the function definition
 
-    render()
+    render() // definition of the function render
     {
         if(this.state.products=="")
         {
@@ -55,5 +55,7 @@ export default class Products extends React.Component{
                 </Table>
             </div>
 
-        )} }
-}
+        )}
+    } // end of the function definition
+
+} // end of the class definition

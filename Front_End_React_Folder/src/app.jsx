@@ -2,6 +2,7 @@ import React from "react";
 import * as ReactDOM from "react-dom";
 import Products from "./components/Products/productsTable";
 import Cart from "./components/Cart/cartTable";
+import {Tabs, Tab} from 'react-bootstrap-tabs';
 
 class App extends React.Component // definition of the class App
 {
@@ -10,7 +11,7 @@ class App extends React.Component // definition of the class App
         return(
             <div>
                 <Products/>
-                <Cart/>
+                {/*<Cart/>*/}
             </div>
     );
     }

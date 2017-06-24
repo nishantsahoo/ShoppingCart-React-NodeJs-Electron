@@ -16,7 +16,9 @@
     "moment": "^2.18.1",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.5.4"
+    "react-bootstrap-tabs": "^1.0.0",
+    "react-dom": "^15.5.4",
+    "react-tabs": "^1.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
