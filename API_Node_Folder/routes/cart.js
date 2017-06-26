@@ -17,7 +17,7 @@ route.post('/addtocart', (req, res) => {
 // To checkout from the cart
 route.post('/checkout', (req, res) => {
     data.cartCheckout(req.body.name);
-    // res.redirect('/myapi/cart');
+    res.redirect('/myapi/cart');
 });
 
 // To decrease the quantity of a particuler Cart item by 1

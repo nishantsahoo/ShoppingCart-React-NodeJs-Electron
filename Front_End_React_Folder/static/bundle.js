@@ -12385,6 +12385,10 @@ var _Table = __webpack_require__(114);
 
 var _Table2 = _interopRequireDefault(_Table);
 
+var _Button = __webpack_require__(88);
+
+var _Button2 = _interopRequireDefault(_Button);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12403,6 +12407,7 @@ var Products = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Products.__proto__ || Object.getPrototypeOf(Products)).call(this, props));
 
         _this.state = { products: [] };
+        _this.onChange = _this.onChange.bind(_this);
         return _this;
     } // end of the function definition
 
@@ -12416,6 +12421,31 @@ var Products = function (_React$Component) {
                 this.setState({ products: products });
             }.bind(this));
         } // end of the function definition
+
+    }, {
+        key: "onChange",
+        value: function onChange(event) // definition of the function addtocart
+        {
+            if (event.target.name == "checkout") {
+                var url = "http://localhost:9000/myapi/cart/checkout";
+                _axios2.default.post(url, { id: event.target.id }).then(function (response) {});
+                url = "http://localhost:9000/myapi/cart/getcart";
+                _axios2.default.get(url).then(function (response) {
+                    var products = response.data;
+                    this.setState({ products: products });
+                }.bind(this));
+            }
+            if (event.target.name == "cplus") {
+                var quantity = +$('quantity[id=' + event.target.id + ']').text();
+                $('quantity[id=' + event.target.id + ']').text(++quantity);
+            }
+            if (event.target.name == "cminus") {
+                var quantity = +$('quantity[id=' + event.target.id + ']').text();
+                if (quantity > 1) {
+                    $('quantity[id=' + event.target.id + ']').text(--quantity);
+                }
+            }
+        } // end of the function addtocart
 
     }, {
         key: "render",
@@ -12432,67 +12462,98 @@ var Products = function (_React$Component) {
                     "div",
                     null,
                     _react2.default.createElement(
-                        _Table2.default,
-                        { striped: true, bordered: true, condensed: true, hover: true },
+                        "h1",
+                        null,
+                        "Cart"
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { style: { width: '50%', marginLeft: '25%' } },
                         _react2.default.createElement(
-                            "thead",
-                            null,
+                            _Table2.default,
+                            { striped: true, bordered: true, condensed: true, hover: true },
                             _react2.default.createElement(
-                                "tr",
-                                null,
-                                _react2.default.createElement(
-                                    "td",
-                                    null,
-                                    "Name"
-                                ),
-                                _react2.default.createElement(
-                                    "td",
-                                    null,
-                                    "Price"
-                                ),
-                                _react2.default.createElement(
-                                    "td",
-                                    null,
-                                    "Quantity"
-                                ),
-                                _react2.default.createElement(
-                                    "td",
-                                    null,
-                                    "Amount"
-                                )
-                            )
-                        ),
-                        this.state.products.map(function (product) {
-                            console.log(product);
-                            return _react2.default.createElement(
-                                "tbody",
+                                "thead",
                                 null,
                                 _react2.default.createElement(
                                     "tr",
-                                    { id: product.id },
+                                    { style: { textAlign: 'center' } },
                                     _react2.default.createElement(
                                         "td",
-                                        { id: product.id },
-                                        product.name
+                                        null,
+                                        "Name"
                                     ),
                                     _react2.default.createElement(
                                         "td",
-                                        { id: product.id },
-                                        product.price
+                                        null,
+                                        "Price"
                                     ),
                                     _react2.default.createElement(
                                         "td",
-                                        { id: product.id },
-                                        product.quantity
+                                        null,
+                                        "Quantity"
                                     ),
                                     _react2.default.createElement(
                                         "td",
-                                        { id: product.id },
-                                        product.amount
+                                        null,
+                                        "Amount"
                                     )
                                 )
-                            );
-                        })
+                            ),
+                            _react2.default.createElement(
+                                "tbody",
+                                { style: { overflowY: 'auto', height: '50%' } },
+                                this.state.products.map(function (product) {
+                                    return _react2.default.createElement(
+                                        "tr",
+                                        { style: { textAlign: 'center' } },
+                                        _react2.default.createElement(
+                                            "td",
+                                            null,
+                                            product.name
+                                        ),
+                                        _react2.default.createElement(
+                                            "td",
+                                            null,
+                                            _react2.default.createElement(
+                                                "price",
+                                                null,
+                                                product.price
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            "td",
+                                            null,
+                                            _react2.default.createElement(
+                                                "button",
+                                                { name: 'cminus', id: product.id, onClick: this.onChange, style: { float: 'left' } },
+                                                "-"
+                                            ),
+                                            _react2.default.createElement(
+                                                "quantity",
+                                                { id: product.id },
+                                                product.quantity
+                                            ),
+                                            _react2.default.createElement(
+                                                "button",
+                                                { name: 'cplus', id: product.id, onClick: this.onChange, style: { float: 'right' } },
+                                                "+"
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            "td",
+                                            { id: product.id },
+                                            product.amount
+                                        )
+                                    );
+                                }.bind(this))
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        _Button2.default,
+                        { name: "checkout", bsStyle: "primary", onClick: this.onChange },
+                        "Checkout"
                     )
                 );
             }
@@ -12528,10 +12589,6 @@ var _axios = __webpack_require__(89);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _formUrlencoded = __webpack_require__(314);
-
-var _formUrlencoded2 = _interopRequireDefault(_formUrlencoded);
-
 var _Table = __webpack_require__(114);
 
 var _Table2 = _interopRequireDefault(_Table);
@@ -12547,6 +12604,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import formurlencoded from "form-urlencoded";
+
 
 var Products = function (_React$Component) {
     _inherits(Products, _React$Component);
@@ -13646,12 +13705,12 @@ var App = function (_React$Component) {
                 { style: { marginTop: '1em' } },
                 _react2.default.createElement(
                     _Button2.default,
-                    { bsStyle: "primary", name: "products", onClick: this.onButtonClick },
+                    { bsStyle: "primary", name: "products", style: { marginRight: '1.5em' }, onClick: this.onButtonClick },
                     "Products"
                 ),
                 _react2.default.createElement(
                     _Button2.default,
-                    { bsStyle: "primary", name: "cart", onClick: this.onButtonClick, style: { marginLeft: '3em' } },
+                    { bsStyle: "primary", name: "cart", onClick: this.onButtonClick, style: { marginLeft: '0.1em' } },
                     "Cart"
                 ),
                 currentComponent,
@@ -26928,89 +26987,6 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 314 */
-/***/ (function(module, exports) {
-
-// Filename: formurlencoded.js
-// Timestamp: 2016.03.07-12:29:28 (last modified)
-// Author(s): Bumblehead (www.bumblehead.com), JBlashill (james@blashill.com), Jumper423 (jump.e.r@yandex.ru)
-//
-// http://www.w3.org/TR/html5/forms.html#url-encoded-form-data
-// input: {one:1,two:2} return: '[one]=1&[two]=2'
-
-module.exports = function (data, opts) {
-    "use strict";
-
-    // ES5 compatible version of `/[^ !'()~\*]/gu`, https://mothereff.in/regexpu
-    var encodechar = new RegExp([
-        '(?:[\0-\x1F"-&\+-\}\x7F-\uD7FF\uE000-\uFFFF]|',
-        '[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|',
-        '(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])'
-    ].join(''), 'g');
-
-    opts = typeof opts === 'object' ? opts : {};
-
-    function encode(value) {
-        return String(value)
-            .replace(encodechar, encodeURIComponent)
-            .replace(/ /g, '+')
-            .replace(/[!'()~\*]/g, function (ch) {
-                return '%' + ch.charCodeAt().toString(16).slice(-2).toUpperCase();
-            });
-    }
-
-    function keys(obj) {
-        var itemsKeys = Object.keys(obj);
-
-        return opts.sorted ? itemsKeys.sort() : itemsKeys;
-    }
-
-    function filterjoin(arr) {
-        return arr.filter(function (e) {
-            return e;
-        }).join('&');
-    }
-
-    function objnest(name, obj) {
-        return filterjoin(keys(obj).map(function (key) {
-            return nest(name + '[' + key + ']', obj[key]);
-        }));
-    }
-
-    function arrnest(name, arr) {
-        return arr.length ? filterjoin(arr.map(function (elem, index) {
-            if (opts.skipIndex) {
-                return nest(name + '[]', elem);
-            } else {
-                return nest(name + '[' + index + ']', elem);
-            }
-        })) : encode(name + '[]');
-    }
-
-    function nest(name, value) {
-        var type = typeof value,
-            f = null;
-
-        if (value === f) {
-            f = opts.ignorenull ? f : encode(name) + '=' + f;
-        } else if (/string|number|boolean/.test(type)) {
-            f = encode(name) + '=' + encode(value);
-        } else if (Array.isArray(value)) {
-            f = arrnest(name, value);
-        } else if (type === 'object') {
-            f = objnest(name, value);
-        }
-
-        return f;
-    }
-
-    return data && filterjoin(keys(data).map(function (key) {
-            return nest(key, data[key]);
-        }));
-};
-
 
 /***/ })
 /******/ ]);
