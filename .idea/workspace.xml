@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73be5bdc-180b-4471-8fdc-53e99d5a9919" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/API_Node_Folder/routes/cart.js" afterPath="$PROJECT_DIR$/API_Node_Folder/routes/cart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/src/app.jsx" afterPath="$PROJECT_DIR$/Front_End_React_Folder/src/app.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx" afterPath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Products/productsTable.jsx" afterPath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Products/productsTable.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/static/bundle.js" afterPath="$PROJECT_DIR$/Front_End_React_Folder/static/bundle.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/app.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -46,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cartTable.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cartTable.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+            <state relative-caret-position="213">
+              <caret line="57" column="103" lean-forward="false" selection-start-line="57" selection-start-column="103" selection-end-line="57" selection-end-column="103" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -61,8 +60,8 @@
       <file leaf-file-name="cart.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/API_Node_Folder/routes/cart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="162">
+              <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -93,9 +92,9 @@
         <option value="$PROJECT_DIR$/API_Node_Folder/server.js" />
         <option value="$PROJECT_DIR$/API_Node_Folder/mydata.js" />
         <option value="$PROJECT_DIR$/Front_End_React_Folder/src/components/Products/productsTable.jsx" />
-        <option value="$PROJECT_DIR$/Front_End_React_Folder/src/app.jsx" />
         <option value="$PROJECT_DIR$/API_Node_Folder/routes/cart.js" />
         <option value="$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx" />
+        <option value="$PROJECT_DIR$/Front_End_React_Folder/src/app.jsx" />
       </list>
     </option>
   </component>
@@ -389,12 +388,12 @@
       <workItem from="1498211514199" duration="8144000" />
       <workItem from="1498229515311" duration="21230000" />
       <workItem from="1498323947290" duration="174000" />
-      <workItem from="1498409572996" duration="14195000" />
+      <workItem from="1498409572996" duration="15290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44646000" />
+    <option name="totallyTimeSpent" value="45741000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -406,7 +405,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15592971" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -759,16 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/app.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/components/Products/productsTable.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -782,16 +771,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/API_Node_Folder/routes/cart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="162">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        <state relative-caret-position="213">
+          <caret line="57" column="103" lean-forward="false" selection-start-line="57" selection-start-column="103" selection-end-line="57" selection-end-column="103" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/app.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

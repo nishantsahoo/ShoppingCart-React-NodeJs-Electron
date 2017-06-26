@@ -31,7 +31,7 @@ class App extends React.Component // definition of the class App
         return (
             <div style={{marginTop: '1em'}}>
                 <Button bsStyle="primary" name="products" style={{marginRight: '1.5em'}} onClick={this.onButtonClick}>Products</Button><Button bsStyle="primary" name="cart" onClick={this.onButtonClick} style={{marginLeft: '0.1em'}}>Cart</Button>
-                {currentComponent};
+                {currentComponent}
             </div>
         );
     };

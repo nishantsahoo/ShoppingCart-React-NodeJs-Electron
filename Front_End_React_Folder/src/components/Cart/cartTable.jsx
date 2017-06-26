@@ -10,16 +10,22 @@ export default class Products extends React.Component // definition of the class
         super(props);
         this.state = {products: []};
         this.onChange = this.onChange.bind(this);
+        this.cartRefresh = this.cartRefresh.bind(this);
     } // end of the function definition
 
     componentDidMount() // definition of the function componentDidMount
+    {
+        this.cartRefresh(); // call of the function cartRefresh
+    } // end of the function definition
+
+    cartRefresh() // definition of the function cartRefresh
     {
         var url="http://localhost:9000/myapi/cart/getcart";
         axios.get(url).then(function(response){
             var products = response.data;
             this.setState({products: products});
         }.bind(this))
-    } // end of the function definition
+    } // end of the function cartRefresh
 
     onChange(event) // definition of the function addtocart
     {
@@ -27,11 +33,7 @@ export default class Products extends React.Component // definition of the class
         {
             var url = "http://localhost:9000/myapi/cart/checkout";
             axios.post(url, {id: event.target.id}).then(function(response) {});
-            url="http://localhost:9000/myapi/cart/getcart";
-            axios.get(url).then(function(response){
-                var products = response.data;
-                this.setState({products: products});
-            }.bind(this))
+            this.cartRefresh(); // call of the function cartRefresh
         }
         if(event.target.name == "cplus")
         {

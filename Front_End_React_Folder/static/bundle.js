@@ -12408,6 +12408,7 @@ var Products = function (_React$Component) {
 
         _this.state = { products: [] };
         _this.onChange = _this.onChange.bind(_this);
+        _this.cartRefresh = _this.cartRefresh.bind(_this);
         return _this;
     } // end of the function definition
 
@@ -12415,12 +12416,19 @@ var Products = function (_React$Component) {
         key: "componentDidMount",
         value: function componentDidMount() // definition of the function componentDidMount
         {
+            this.cartRefresh(); // call of the function cartRefresh
+        } // end of the function definition
+
+    }, {
+        key: "cartRefresh",
+        value: function cartRefresh() // definition of the function cartRefresh
+        {
             var url = "http://localhost:9000/myapi/cart/getcart";
             _axios2.default.get(url).then(function (response) {
                 var products = response.data;
                 this.setState({ products: products });
             }.bind(this));
-        } // end of the function definition
+        } // end of the function cartRefresh
 
     }, {
         key: "onChange",
@@ -12429,11 +12437,7 @@ var Products = function (_React$Component) {
             if (event.target.name == "checkout") {
                 var url = "http://localhost:9000/myapi/cart/checkout";
                 _axios2.default.post(url, { id: event.target.id }).then(function (response) {});
-                url = "http://localhost:9000/myapi/cart/getcart";
-                _axios2.default.get(url).then(function (response) {
-                    var products = response.data;
-                    this.setState({ products: products });
-                }.bind(this));
+                this.cartRefresh(); // call of the function cartRefresh
             }
             if (event.target.name == "cplus") {
                 var quantity = +$('quantity[id=' + event.target.id + ']').text();
@@ -13713,8 +13717,7 @@ var App = function (_React$Component) {
                     { bsStyle: "primary", name: "cart", onClick: this.onButtonClick, style: { marginLeft: '0.1em' } },
                     "Cart"
                 ),
-                currentComponent,
-                ";"
+                currentComponent
             );
         }
     }]);
