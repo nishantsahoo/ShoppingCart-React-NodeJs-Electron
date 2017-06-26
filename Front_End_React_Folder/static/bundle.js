@@ -12592,7 +12592,7 @@ var Products = function (_React$Component) {
                 };
                 console.log(cartItem);
                 $('quantity[id=' + product.id + ']').text(1); // set quantity to zero after button click
-                _axios2.default.post(url, cartItem).then(function (response) {
+                _axios2.default.post(url, { product: cartItem }).then(function (response) {
                     console.log(response);
                 });
             }

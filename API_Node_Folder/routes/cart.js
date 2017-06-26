@@ -10,8 +10,8 @@ route.get('/getcart', (req, res) => {
 
 // To add an item to the cart
 route.post('/addtocart', (req, res) => {
-    data.addToCart(req.body.cartItem);
-    // res.redirect('/myapi/cart');
+    data.addToCart(req.body.product);
+    res.redirect('/myapi/cart');
 });
 
 // To checkout from the cart

@@ -40,7 +40,7 @@ export default class Products extends React.Component // definition of the class
             };
             console.log(cartItem);
             $('quantity[id=' + product.id + ']').text(1); // set quantity to zero after button click
-            axios.post(url, cartItem).then(function(response){console.log(response)});
+            axios.post(url, {product: cartItem}).then(function(response){console.log(response)});
         }
         if(event.target.name == "plus")
         {
