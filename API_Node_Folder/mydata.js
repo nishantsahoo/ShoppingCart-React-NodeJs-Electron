@@ -53,15 +53,15 @@ function addToProducts(product) // definition of the function addToProducts
 
 function addToCart (product) // definition of the function addToCart
 {
-    console.log(product);
+    console.log('Add to cart***********');
     CartProduct.findById(product.id).then(cartItem => {
         cartItem.increment('quantity', {by: product.quantity});
-    cartItem.increment('amount', {by: product.amount});
-    return cartItem;
+        cartItem.increment('amount', {by: product.amount});
+        return cartItem;
     })
     return CartProduct.create(
         {
-            // id: product.id,
+            id: product.id,
             name: product.name,
             price: product.price,
             quantity: product.quantity,
