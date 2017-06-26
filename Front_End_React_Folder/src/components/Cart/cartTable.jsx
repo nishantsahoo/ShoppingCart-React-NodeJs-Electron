@@ -34,6 +34,7 @@ export default class Products extends React.Component // definition of the class
         {
             var url = "http://localhost:9000/myapi/cart/checkout";
             axios.post(url, {id: event.target.id}).then(function(response) {});
+            alert('Thank you for shopping!');
             this.cartRefresh(); // call of the function cartRefresh
         }
         if(event.target.name == "cplus")

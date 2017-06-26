@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="73be5bdc-180b-4471-8fdc-53e99d5a9919" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx" afterPath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Products/productsTable.jsx" afterPath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Products/productsTable.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/static/bundle.js" afterPath="$PROJECT_DIR$/Front_End_React_Folder/static/bundle.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -47,8 +46,8 @@
       <file leaf-file-name="cartTable.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+            <state relative-caret-position="128">
+              <caret line="36" column="45" lean-forward="false" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -387,12 +386,12 @@
       <workItem from="1498211514199" duration="8144000" />
       <workItem from="1498229515311" duration="21230000" />
       <workItem from="1498323947290" duration="174000" />
-      <workItem from="1498409572996" duration="15594000" />
+      <workItem from="1498409572996" duration="15795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46045000" />
+    <option name="totallyTimeSpent" value="46246000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,7 +403,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15592971" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -788,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+        <state relative-caret-position="128">
+          <caret line="36" column="45" lean-forward="false" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

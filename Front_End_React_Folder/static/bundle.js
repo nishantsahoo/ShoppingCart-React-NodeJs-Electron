@@ -12438,6 +12438,7 @@ var Products = function (_React$Component) {
             if (event.target.name == "checkout") {
                 var url = "http://localhost:9000/myapi/cart/checkout";
                 _axios2.default.post(url, { id: event.target.id }).then(function (response) {});
+                alert('Thank you for shopping!');
                 this.cartRefresh(); // call of the function cartRefresh
             }
             if (event.target.name == "cplus") {
