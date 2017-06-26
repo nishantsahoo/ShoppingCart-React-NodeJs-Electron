@@ -25,6 +25,7 @@ export default class Products extends React.Component // definition of the class
             var products = response.data;
             this.setState({products: products});
         }.bind(this))
+        // also set total amount to something on line 90
     } // end of the function cartRefresh
 
     onChange(event) // definition of the function addtocart
@@ -86,6 +87,7 @@ export default class Products extends React.Component // definition of the class
                     </tbody>
                 </Table>
                 </div>
+                <p id="totalcost"></p>
                 <Button name="checkout" bsStyle="primary" onClick={this.onChange}>Checkout</Button>
             </div>
         )}

@@ -12428,6 +12428,7 @@ var Products = function (_React$Component) {
                 var products = response.data;
                 this.setState({ products: products });
             }.bind(this));
+            // also set total amount to something on line 90
         } // end of the function cartRefresh
 
     }, {
@@ -12554,6 +12555,7 @@ var Products = function (_React$Component) {
                             )
                         )
                     ),
+                    _react2.default.createElement("p", { id: "totalcost" }),
                     _react2.default.createElement(
                         _Button2.default,
                         { name: "checkout", bsStyle: "primary", onClick: this.onChange },
@@ -12658,6 +12660,7 @@ var Products = function (_React$Component) {
                 _axios2.default.post(url, { product: cartItem }).then(function (response) {
                     console.log(response);
                 });
+                alert(product.name + ' added to the cart!');
             }
             if (event.target.name == "plus") {
                 var quantity = +$('quantity[id=' + event.target.id + ']').text();
