@@ -8,7 +8,7 @@ app.use(bodyparser.urlencoded({extended: true}));
 const ProductsRoute = require('./routes/products'); // route for products
 app.use('/myapi/products/', ProductsRoute);
 const CartRoute = require('./routes/cart'); // route for cart
-app.use('/myapi/cart/', CartRoute);
+app.use('/myapi/cart', CartRoute);
 app.use('/',express.static(__dirname+"/public_static"));
 // app listen
 app.listen(9000, function () {

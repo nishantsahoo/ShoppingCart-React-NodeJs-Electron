@@ -29,8 +29,8 @@ class App extends React.Component // definition of the class App
     {
         var currentComponent = this.state.currentComponent;
         return (
-            <div>
-                <Button name="products" onClick={this.onButtonClick}>Products</Button><Button name="cart" onClick={this.onButtonClick} style={{marginLeft: '3em'}}>Cart</Button>
+            <div style={{marginTop: '1em'}}>
+                <Button bsStyle="primary" name="products" onClick={this.onButtonClick}>Products</Button><Button bsStyle="primary" name="cart" onClick={this.onButtonClick} style={{marginLeft: '3em'}}>Cart</Button>
                 {currentComponent};
             </div>
         );
@@ -38,7 +38,7 @@ class App extends React.Component // definition of the class App
 } // end of the class definition
 
 var app = <App/>;
-console.log(app);
+// console.log(app);
 var node = document.getElementById("app");
-console.log(node);
+// console.log(node);
 ReactDOM.render(app, node);

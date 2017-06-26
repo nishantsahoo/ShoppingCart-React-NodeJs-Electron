@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import formurlencoded from "form-urlencoded";
 import Table from "react-bootstrap/es/Table";
 import Button from "react-bootstrap/es/Button";
 
@@ -25,6 +26,22 @@ export default class Products extends React.Component // definition of the class
     {
         // alert('On change: ' + event.target.name + ' ' + event.target.id);
         // console.log('On change: ' + event.target.name, event.target.id);
+        if(event.target.name=="addtocart")
+        {
+            var product = JSON.parse(event.target.id);
+            var url = "http://localhost:9000/myapi/cart/addtocart";
+            var prodQuantity = +$('quantity[id=' + product.id + ']').text();
+            var cartItem = {
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                quantity: prodQuantity,
+                amount: prodQuantity*product.price
+            };
+            console.log(cartItem);
+            $('quantity[id=' + product.id + ']').text(1); // set quantity to zero after button click
+            axios.post(url, cartItem).then(function(response){console.log(response)});
+        }
         if(event.target.name == "plus")
         {
             var quantity = +$('quantity[id=' + event.target.id + ']').text();
@@ -62,7 +79,7 @@ export default class Products extends React.Component // definition of the class
                                         <td>{product.name}</td>
                                         <td><price>{product.price}</price></td>
                                         <td><button name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
-                                        <td><Button bsStyle="primary" name={'addtocart'} id={product.id} onClick={this.onChange}>Add to Cart</Button></td>
+                                        <td><Button bsStyle="primary" name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</Button></td>
                                     </tr>
                             );
                         }.bind(this))}

@@ -24,7 +24,7 @@ export default class Products extends React.Component // definition of the class
         if(this.state.products=="")
         {
             return (
-                <p>Cart is empty</p>
+                <p style={{marginTop:'2em', fontSize: '1.5em', fontFamily: 'monospace'}}>Cart is empty!</p>
             )
         }
         else {

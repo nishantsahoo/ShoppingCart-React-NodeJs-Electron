@@ -12424,8 +12424,8 @@ var Products = function (_React$Component) {
             if (this.state.products == "") {
                 return _react2.default.createElement(
                     "p",
-                    null,
-                    "Cart is empty"
+                    { style: { marginTop: '2em', fontSize: '1.5em', fontFamily: 'monospace' } },
+                    "Cart is empty!"
                 );
             } else {
                 return _react2.default.createElement(
@@ -12528,6 +12528,10 @@ var _axios = __webpack_require__(89);
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _formUrlencoded = __webpack_require__(314);
+
+var _formUrlencoded2 = _interopRequireDefault(_formUrlencoded);
+
 var _Table = __webpack_require__(114);
 
 var _Table2 = _interopRequireDefault(_Table);
@@ -12575,6 +12579,23 @@ var Products = function (_React$Component) {
         {
             // alert('On change: ' + event.target.name + ' ' + event.target.id);
             // console.log('On change: ' + event.target.name, event.target.id);
+            if (event.target.name == "addtocart") {
+                var product = JSON.parse(event.target.id);
+                var url = "http://localhost:9000/myapi/cart/addtocart";
+                var prodQuantity = +$('quantity[id=' + product.id + ']').text();
+                var cartItem = {
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    quantity: prodQuantity,
+                    amount: prodQuantity * product.price
+                };
+                console.log(cartItem);
+                $('quantity[id=' + product.id + ']').text(1); // set quantity to zero after button click
+                _axios2.default.post(url, cartItem).then(function (response) {
+                    console.log(response);
+                });
+            }
             if (event.target.name == "plus") {
                 var quantity = +$('quantity[id=' + event.target.id + ']').text();
                 $('quantity[id=' + event.target.id + ']').text(++quantity);
@@ -12678,7 +12699,7 @@ var Products = function (_React$Component) {
                                         null,
                                         _react2.default.createElement(
                                             _Button2.default,
-                                            { bsStyle: "primary", name: 'addtocart', id: product.id, onClick: this.onChange },
+                                            { bsStyle: "primary", name: 'addtocart', id: JSON.stringify(product), onClick: this.onChange },
                                             "Add to Cart"
                                         )
                                     )
@@ -13622,15 +13643,15 @@ var App = function (_React$Component) {
             var currentComponent = this.state.currentComponent;
             return _react2.default.createElement(
                 "div",
-                null,
+                { style: { marginTop: '1em' } },
                 _react2.default.createElement(
                     _Button2.default,
-                    { name: "products", onClick: this.onButtonClick },
+                    { bsStyle: "primary", name: "products", onClick: this.onButtonClick },
                     "Products"
                 ),
                 _react2.default.createElement(
                     _Button2.default,
-                    { name: "cart", onClick: this.onButtonClick, style: { marginLeft: '3em' } },
+                    { bsStyle: "primary", name: "cart", onClick: this.onButtonClick, style: { marginLeft: '3em' } },
                     "Cart"
                 ),
                 currentComponent,
@@ -13644,9 +13665,9 @@ var App = function (_React$Component) {
 ); // end of the class definition
 
 var app = _react2.default.createElement(App, null);
-console.log(app);
+// console.log(app);
 var node = document.getElementById("app");
-console.log(node);
+// console.log(node);
 ReactDOM.render(app, node);
 
 /***/ }),
@@ -26907,6 +26928,89 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports) {
+
+// Filename: formurlencoded.js
+// Timestamp: 2016.03.07-12:29:28 (last modified)
+// Author(s): Bumblehead (www.bumblehead.com), JBlashill (james@blashill.com), Jumper423 (jump.e.r@yandex.ru)
+//
+// http://www.w3.org/TR/html5/forms.html#url-encoded-form-data
+// input: {one:1,two:2} return: '[one]=1&[two]=2'
+
+module.exports = function (data, opts) {
+    "use strict";
+
+    // ES5 compatible version of `/[^ !'()~\*]/gu`, https://mothereff.in/regexpu
+    var encodechar = new RegExp([
+        '(?:[\0-\x1F"-&\+-\}\x7F-\uD7FF\uE000-\uFFFF]|',
+        '[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|',
+        '(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])'
+    ].join(''), 'g');
+
+    opts = typeof opts === 'object' ? opts : {};
+
+    function encode(value) {
+        return String(value)
+            .replace(encodechar, encodeURIComponent)
+            .replace(/ /g, '+')
+            .replace(/[!'()~\*]/g, function (ch) {
+                return '%' + ch.charCodeAt().toString(16).slice(-2).toUpperCase();
+            });
+    }
+
+    function keys(obj) {
+        var itemsKeys = Object.keys(obj);
+
+        return opts.sorted ? itemsKeys.sort() : itemsKeys;
+    }
+
+    function filterjoin(arr) {
+        return arr.filter(function (e) {
+            return e;
+        }).join('&');
+    }
+
+    function objnest(name, obj) {
+        return filterjoin(keys(obj).map(function (key) {
+            return nest(name + '[' + key + ']', obj[key]);
+        }));
+    }
+
+    function arrnest(name, arr) {
+        return arr.length ? filterjoin(arr.map(function (elem, index) {
+            if (opts.skipIndex) {
+                return nest(name + '[]', elem);
+            } else {
+                return nest(name + '[' + index + ']', elem);
+            }
+        })) : encode(name + '[]');
+    }
+
+    function nest(name, value) {
+        var type = typeof value,
+            f = null;
+
+        if (value === f) {
+            f = opts.ignorenull ? f : encode(name) + '=' + f;
+        } else if (/string|number|boolean/.test(type)) {
+            f = encode(name) + '=' + encode(value);
+        } else if (Array.isArray(value)) {
+            f = arrnest(name, value);
+        } else if (type === 'object') {
+            f = objnest(name, value);
+        }
+
+        return f;
+    }
+
+    return data && filterjoin(keys(data).map(function (key) {
+            return nest(key, data[key]);
+        }));
+};
+
 
 /***/ })
 /******/ ]);
