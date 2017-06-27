@@ -12435,6 +12435,12 @@ var Products = function (_React$Component) {
                     _axios2.default.get(url).then(function (response) {
                         var noOfProducts = response.data;
                         this.setState({ products: products, totalamount: totalamount, noOfProducts: noOfProducts });
+                        if (products == "") {
+                            var productsTab = document.getElementById('productsTab');
+                            setTimeout(function () {
+                                productsTab.click();
+                            }.bind(this), 1000); // delay of 1s so that the page can be refreshed
+                        }
                     }.bind(this));
                 }.bind(this));
             }.bind(this));
@@ -13760,12 +13766,12 @@ var App = function (_React$Component) {
                 { style: { marginTop: '1em' } },
                 _react2.default.createElement(
                     _Button2.default,
-                    { bsStyle: "primary", name: "products", style: { marginRight: '1.5em' }, onClick: this.onButtonClick },
+                    { id: "productsTab", bsStyle: "primary", name: "products", style: { marginRight: '1.5em' }, onClick: this.onButtonClick },
                     "Products"
                 ),
                 _react2.default.createElement(
                     _Button2.default,
-                    { bsStyle: "primary", name: "cart", onClick: this.onButtonClick, style: { marginLeft: '0.1em' } },
+                    { id: "cartTab", bsStyle: "primary", name: "cart", onClick: this.onButtonClick, style: { marginLeft: '0.1em' } },
                     "Cart"
                 ),
                 currentComponent

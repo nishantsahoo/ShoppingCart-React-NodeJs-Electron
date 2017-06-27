@@ -31,6 +31,14 @@ export default class Products extends React.Component // definition of the class
                 axios.get(url).then(function(response) {
                     var noOfProducts = response.data;
                     this.setState({products: products, totalamount: totalamount, noOfProducts: noOfProducts});
+                    if(products == "")
+                    {
+                        var productsTab = document.getElementById('productsTab');
+                        setTimeout(function()
+                        {
+                            productsTab.click();
+                        }.bind(this), 1000); // delay of 1s so that the page can be refreshed
+                    }
                 }.bind(this))
             }.bind(this))
         }.bind(this))
