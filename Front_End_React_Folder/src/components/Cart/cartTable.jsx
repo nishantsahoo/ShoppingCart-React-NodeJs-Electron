@@ -8,7 +8,7 @@ export default class Products extends React.Component // definition of the class
     constructor(props) // definition of the constructor
     {
         super(props);
-        this.state = {products: [], totalamount: 0};
+        this.state = {products: [], totalamount: 0, noOfProducts: 0};
         this.onChange = this.onChange.bind(this);
         this.cartRefresh = this.cartRefresh.bind(this);
     } // end of the function definition
@@ -26,7 +26,11 @@ export default class Products extends React.Component // definition of the class
             var url="http://localhost:9000/myapi/cart/totalamount";
             axios.get(url).then(function(response){
                 var totalamount = response.data;
-                this.setState({products: products, totalamount: totalamount});
+                var url="http://localhost:9000/myapi/cart/countproducts";
+                axios.get(url).then(function(response) {
+                    var noOfProducts = response.data;
+                    this.setState({products: products, totalamount: totalamount, noOfProducts: noOfProducts});
+                }.bind(this))
             }.bind(this))
         }.bind(this))
     } // end of the function cartRefresh
@@ -44,7 +48,8 @@ export default class Products extends React.Component // definition of the class
         {
             var url = "http://localhost:9000/myapi/cart/incrementcart";
             axios.post(url, {id: event.target.id}).then(function(response){});
-            setTimeout(function(){
+            setTimeout(function()
+            {
                 this.cartRefresh(); // call of the function cartRefresh
             }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
         }
@@ -55,7 +60,8 @@ export default class Products extends React.Component // definition of the class
             {
                 var url = "http://localhost:9000/myapi/cart/decrementcart";
                 axios.post(url, {id: event.target.id}).then(function(response){});
-                setTimeout(function(){
+                setTimeout(function()
+                {
                     this.cartRefresh(); // call of the function cartRefresh
                 }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
             }
@@ -74,6 +80,7 @@ export default class Products extends React.Component // definition of the class
         return (
             <div>
                 <h1>Cart</h1>
+                <h3>Number of products: {this.state.noOfProducts}</h3>
                 <div style={{width: '50%', marginLeft: '25%'}}>
                 <Table striped bordered condensed hover>
                     <thead>

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73be5bdc-180b-4471-8fdc-53e99d5a9919" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Nishant.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Nishant.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx" afterPath="$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Front_End_React_Folder/static/bundle.js" afterPath="$PROJECT_DIR$/Front_End_React_Folder/static/bundle.js" />
     </list>
@@ -47,8 +46,8 @@
       <file leaf-file-name="cartTable.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+            <state relative-caret-position="51">
+              <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -59,8 +58,8 @@
       <file leaf-file-name="cart.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/API_Node_Folder/routes/cart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+            <state relative-caret-position="238">
+              <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -387,12 +386,12 @@
       <workItem from="1498211514199" duration="8144000" />
       <workItem from="1498229515311" duration="21230000" />
       <workItem from="1498323947290" duration="174000" />
-      <workItem from="1498409572996" duration="18194000" />
+      <workItem from="1498409572996" duration="19062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48645000" />
+    <option name="totallyTimeSpent" value="49513000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,7 +403,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15592971" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -780,16 +779,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/API_Node_Folder/routes/cart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        <state relative-caret-position="238">
+          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Front_End_React_Folder/src/components/Cart/cartTable.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        <state relative-caret-position="51">
+          <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

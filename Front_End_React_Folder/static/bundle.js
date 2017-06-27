@@ -12406,7 +12406,7 @@ var Products = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Products.__proto__ || Object.getPrototypeOf(Products)).call(this, props));
 
-        _this.state = { products: [], totalamount: 0 };
+        _this.state = { products: [], totalamount: 0, noOfProducts: 0 };
         _this.onChange = _this.onChange.bind(_this);
         _this.cartRefresh = _this.cartRefresh.bind(_this);
         return _this;
@@ -12429,7 +12429,11 @@ var Products = function (_React$Component) {
                 var url = "http://localhost:9000/myapi/cart/totalamount";
                 _axios2.default.get(url).then(function (response) {
                     var totalamount = response.data;
-                    this.setState({ products: products, totalamount: totalamount });
+                    var url = "http://localhost:9000/myapi/cart/countproducts";
+                    _axios2.default.get(url).then(function (response) {
+                        var noOfProducts = response.data;
+                        this.setState({ products: products, totalamount: totalamount, noOfProducts: noOfProducts });
+                    }.bind(this));
                 }.bind(this));
             }.bind(this));
         } // end of the function cartRefresh
@@ -12481,6 +12485,12 @@ var Products = function (_React$Component) {
                         "h1",
                         null,
                         "Cart"
+                    ),
+                    _react2.default.createElement(
+                        "h3",
+                        null,
+                        "Number of products: ",
+                        this.state.noOfProducts
                     ),
                     _react2.default.createElement(
                         "div",
