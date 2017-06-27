@@ -1,7 +1,8 @@
 # About
 
 <b>Name:</b> MyCart
-<b>Description:</b> Shopping cart implementation using React, NodeJs, MySQL
+
+<b>Description:</b> Shopping cart implementation using React, NodeJs, MySQL, ExpressJs, axios, cors, sequelize
 
 ## Installation
 ```
@@ -32,7 +33,7 @@ cd Front_End_React_Folder
 npm start
 ```
 
-##### Step 5: Open the browser and go to the link
+##### Step 5: Open the browser and open the link
 ```
 http://localhost:8000/
 ```
