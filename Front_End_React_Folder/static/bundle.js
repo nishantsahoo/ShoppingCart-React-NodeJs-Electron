@@ -12545,7 +12545,7 @@ var Products = function (_React$Component) {
                                             null,
                                             _react2.default.createElement(
                                                 "button",
-                                                { name: 'remove', id: product.id, onClick: this.onChange, style: { float: 'left' } },
+                                                { className: "red", name: 'remove', id: product.id, onClick: this.onChange, style: { float: 'left' } },
                                                 "X"
                                             ),
                                             product.name
@@ -12564,7 +12564,7 @@ var Products = function (_React$Component) {
                                             null,
                                             _react2.default.createElement(
                                                 "button",
-                                                { name: 'cminus', id: product.id, onClick: this.onChange, style: { float: 'left' } },
+                                                { className: "red", name: 'cminus', id: product.id, onClick: this.onChange, style: { float: 'left' } },
                                                 "-"
                                             ),
                                             _react2.default.createElement(
@@ -12574,7 +12574,7 @@ var Products = function (_React$Component) {
                                             ),
                                             _react2.default.createElement(
                                                 "button",
-                                                { name: 'cplus', id: product.id, onClick: this.onChange, style: { float: 'right' } },
+                                                { className: "green", name: 'cplus', id: product.id, onClick: this.onChange, style: { float: 'right' } },
                                                 "+"
                                             )
                                         ),
@@ -12595,8 +12595,8 @@ var Products = function (_React$Component) {
                         this.state.totalamount
                     ),
                     _react2.default.createElement(
-                        _Button2.default,
-                        { name: "checkout", bsStyle: "primary", onClick: this.onChange },
+                        "button",
+                        { className: "purple", name: "checkout", bsStyle: "primary", onClick: this.onChange },
                         "Checkout"
                     )
                 );
@@ -12784,7 +12784,7 @@ var Products = function (_React$Component) {
                                         null,
                                         _react2.default.createElement(
                                             "button",
-                                            { name: 'minus', id: product.id, onClick: this.onChange, style: { float: 'left' } },
+                                            { className: "red", name: 'minus', id: product.id, onClick: this.onChange, style: { float: 'left' } },
                                             "-"
                                         ),
                                         _react2.default.createElement(
@@ -12794,7 +12794,7 @@ var Products = function (_React$Component) {
                                         ),
                                         _react2.default.createElement(
                                             "button",
-                                            { name: 'plus', id: product.id, onClick: this.onChange, style: { float: 'right' } },
+                                            { className: "green", name: 'plus', id: product.id, onClick: this.onChange, style: { float: 'right' } },
                                             "+"
                                         )
                                     ),
@@ -12802,8 +12802,8 @@ var Products = function (_React$Component) {
                                         "td",
                                         null,
                                         _react2.default.createElement(
-                                            _Button2.default,
-                                            { bsStyle: "primary", name: 'addtocart', id: JSON.stringify(product), onClick: this.onChange },
+                                            "button",
+                                            { className: "blue", bsStyle: "primary", name: 'addtocart', id: JSON.stringify(product), onClick: this.onChange },
                                             "Add to Cart"
                                         )
                                     )

@@ -104,9 +104,9 @@ export default class Products extends React.Component // definition of the class
                     {this.state.products.map(function(product){
                         return (
                             <tr  style={{textAlign: 'center'}}>
-                                <td><button name={'remove'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>X</button>{product.name}</td>
+                                <td><button className="red" name={'remove'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>X</button>{product.name}</td>
                                 <td><price>{product.price}</price></td>
-                                <td><button name={'cminus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button name={'cplus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
+                                <td><button className="red" name={'cminus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'cplus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
                                 <td id={product.id}>{product.amount}</td>
                             </tr>
                         )
@@ -115,7 +115,7 @@ export default class Products extends React.Component // definition of the class
                 </Table>
                 </div>
                 <h3 id="totalcost">Total cost: {this.state.totalamount}</h3>
-                <Button name="checkout" bsStyle="primary" onClick={this.onChange}>Checkout</Button>
+                <button className="purple" name="checkout" bsStyle="primary" onClick={this.onChange}>Checkout</button>
             </div>
         )}
     } // end of the function definition
