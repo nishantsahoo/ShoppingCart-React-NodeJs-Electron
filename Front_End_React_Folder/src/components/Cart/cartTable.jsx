@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Table from "react-bootstrap/es/Table";
-import Button from "react-bootstrap/es/Button";
+// import Button from "react-bootstrap/es/Button";
+import Panel from "react-bootstrap/es/Panel"
 
 export default class Products extends React.Component // definition of the class Products
 {
@@ -88,10 +89,10 @@ export default class Products extends React.Component // definition of the class
         else {
         return (
             <div>
-                <h1>Cart</h1>
+                <Panel style={{width: '60%', marginLeft: '20%', marginTop: '2em'}} header={<h1>Cart</h1>}>
                 <h3>Number of products: {this.state.noOfProducts}</h3>
                 <div style={{width: '50%', marginLeft: '25%'}}>
-                <Table striped bordered condensed hover>
+                <Table striped bordered condensed hover fill>
                     <thead>
                     <tr style={{textAlign: 'center'}}>
                         <td>Name</td>
@@ -116,6 +117,7 @@ export default class Products extends React.Component // definition of the class
                 </div>
                 <h3 id="totalcost">Total cost: {this.state.totalamount}</h3>
                 <button className="purple" name="checkout" bsStyle="primary" onClick={this.onChange}>Checkout</button>
+                </Panel>
             </div>
         )}
     } // end of the function definition
