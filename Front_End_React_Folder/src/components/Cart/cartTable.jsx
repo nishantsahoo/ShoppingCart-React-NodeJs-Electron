@@ -66,6 +66,15 @@ export default class Products extends React.Component // definition of the class
                 }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
             }
         }
+        if(event.target.name == "remove")
+        {
+            var url = "http://localhost:9000/myapi/cart/delfromcart";
+            axios.post(url, {id: event.target.id}).then(function(response){});
+            setTimeout(function()
+            {
+                this.cartRefresh(); // call of the function cartRefresh
+            }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
+        }
     } // end of the function addtocart
 
     render() // definition of the function render
@@ -95,7 +104,7 @@ export default class Products extends React.Component // definition of the class
                     {this.state.products.map(function(product){
                         return (
                             <tr  style={{textAlign: 'center'}}>
-                                <td>{product.name}</td>
+                                <td><button name={'remove'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>X</button>{product.name}</td>
                                 <td><price>{product.price}</price></td>
                                 <td><button name={'cminus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button name={'cplus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
                                 <td id={product.id}>{product.amount}</td>

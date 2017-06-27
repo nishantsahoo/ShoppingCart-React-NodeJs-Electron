@@ -12465,6 +12465,13 @@ var Products = function (_React$Component) {
                     }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
                 }
             }
+            if (event.target.name == "remove") {
+                var url = "http://localhost:9000/myapi/cart/delfromcart";
+                _axios2.default.post(url, { id: event.target.id }).then(function (response) {});
+                setTimeout(function () {
+                    this.cartRefresh(); // call of the function cartRefresh
+                }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
+            }
         } // end of the function addtocart
 
     }, {
@@ -12536,6 +12543,11 @@ var Products = function (_React$Component) {
                                         _react2.default.createElement(
                                             "td",
                                             null,
+                                            _react2.default.createElement(
+                                                "button",
+                                                { name: 'remove', id: product.id, onClick: this.onChange, style: { float: 'left' } },
+                                                "X"
+                                            ),
                                             product.name
                                         ),
                                         _react2.default.createElement(
