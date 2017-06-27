@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 // import formurlencoded from "form-urlencoded";
 import Table from "react-bootstrap/es/Table";
-import Button from "react-bootstrap/es/Button";
+// import Button from "react-bootstrap/es/Button";
+import Panel from "react-bootstrap/es/Panel"
 
 export default class Products extends React.Component // definition of the class Products
 {
@@ -62,9 +63,9 @@ export default class Products extends React.Component // definition of the class
     {
         return (
             <div>
-                <h1>Products</h1>
-                <div style={{width: '50%', marginLeft: '25%'}}>
-                    <Table striped bordered condensed hover>
+                <Panel style={{width: '60%', marginLeft: '20%', marginTop: '2em'}} header={<h1>Products</h1>}>
+                <div style={{width: '60%', marginLeft: '20%'}}>
+                    <Table striped bordered condensed hover fill>
                         <thead>
                             <tr style={{textAlign: 'center'}}>
                                 <td>Name</td>
@@ -79,14 +80,15 @@ export default class Products extends React.Component // definition of the class
                                     <tr style={{textAlign: 'center'}}>
                                         <td>{product.name}</td>
                                         <td><price>{product.price}</price></td>
-                                        <td><button name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
-                                        <td><Button bsStyle="primary" name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</Button></td>
+                                        <td><button className="red" name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
+                                        <td><button className="blue" bsStyle="primary" name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</button></td>
                                     </tr>
                             );
                         }.bind(this))}
                         </tbody>
                     </Table>
                 </div>
+                </Panel>
             </div>
         )
     } // end of the function definition

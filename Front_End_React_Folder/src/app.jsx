@@ -30,7 +30,7 @@ class App extends React.Component // definition of the class App
         var currentComponent = this.state.currentComponent;
         return (
             <div style={{marginTop: '1em'}}>
-                <Button bsStyle="primary" name="products" style={{marginRight: '1.5em'}} onClick={this.onButtonClick}>Products</Button><Button bsStyle="primary" name="cart" onClick={this.onButtonClick} style={{marginLeft: '0.1em'}}>Cart</Button>
+                <Button id="productsTab" bsStyle="primary" name="products" style={{marginRight: '1.5em'}} onClick={this.onButtonClick}>Products</Button><Button id="cartTab" bsStyle="primary" name="cart" onClick={this.onButtonClick} style={{marginLeft: '0.1em'}}>Cart</Button>
                 {currentComponent}
             </div>
         );
