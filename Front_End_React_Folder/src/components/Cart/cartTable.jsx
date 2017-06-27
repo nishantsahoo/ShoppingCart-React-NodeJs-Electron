@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Table from "react-bootstrap/es/Table";
-import Button from "react-bootstrap/es/Button";
+// import Button from "react-bootstrap/es/Button";
+import Panel from "react-bootstrap/es/Panel"
 
 export default class Products extends React.Component // definition of the class Products
 {
@@ -30,6 +31,14 @@ export default class Products extends React.Component // definition of the class
                 axios.get(url).then(function(response) {
                     var noOfProducts = response.data;
                     this.setState({products: products, totalamount: totalamount, noOfProducts: noOfProducts});
+                    if(products == "")
+                    {
+                        var productsTab = document.getElementById('productsTab');
+                        setTimeout(function()
+                        {
+                            productsTab.click();
+                        }.bind(this), 1000); // delay of 1s so that the page can be refreshed
+                    }
                 }.bind(this))
             }.bind(this))
         }.bind(this))
@@ -88,10 +97,10 @@ export default class Products extends React.Component // definition of the class
         else {
         return (
             <div>
-                <h1>Cart</h1>
+                <Panel style={{width: '60%', marginLeft: '20%', marginTop: '2em'}} header={<h1>Cart</h1>}>
                 <h3>Number of products: {this.state.noOfProducts}</h3>
                 <div style={{width: '50%', marginLeft: '25%'}}>
-                <Table striped bordered condensed hover>
+                <Table striped bordered condensed hover fill>
                     <thead>
                     <tr style={{textAlign: 'center'}}>
                         <td>Name</td>
@@ -104,9 +113,9 @@ export default class Products extends React.Component // definition of the class
                     {this.state.products.map(function(product){
                         return (
                             <tr  style={{textAlign: 'center'}}>
-                                <td><button name={'remove'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>X</button>{product.name}</td>
+                                <td><button className="red" name={'remove'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>X</button>{product.name}</td>
                                 <td><price>{product.price}</price></td>
-                                <td><button name={'cminus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button name={'cplus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
+                                <td><button className="red" name={'cminus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'cplus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
                                 <td id={product.id}>{product.amount}</td>
                             </tr>
                         )
@@ -115,7 +124,8 @@ export default class Products extends React.Component // definition of the class
                 </Table>
                 </div>
                 <h3 id="totalcost">Total cost: {this.state.totalamount}</h3>
-                <Button name="checkout" bsStyle="primary" onClick={this.onChange}>Checkout</Button>
+                <button className="purple" name="checkout" bsStyle="primary" onClick={this.onChange}>Checkout</button>
+                </Panel>
             </div>
         )}
     } // end of the function definition
