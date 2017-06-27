@@ -8,7 +8,7 @@ export default class Products extends React.Component // definition of the class
     constructor(props) // definition of the constructor
     {
         super(props);
-        this.state = {products: []};
+        this.state = {products: [], totalamount: 0};
         this.onChange = this.onChange.bind(this);
         this.cartRefresh = this.cartRefresh.bind(this);
     } // end of the function definition
@@ -23,9 +23,12 @@ export default class Products extends React.Component // definition of the class
         var url="http://localhost:9000/myapi/cart/getcart";
         axios.get(url).then(function(response){
             var products = response.data;
-            this.setState({products: products});
+            var url="http://localhost:9000/myapi/cart/totalamount";
+            axios.get(url).then(function(response){
+                var totalamount = response.data;
+                this.setState({products: products, totalamount: totalamount});
+            }.bind(this))
         }.bind(this))
-        // also set total amount to something on line 90
     } // end of the function cartRefresh
 
     onChange(event) // definition of the function addtocart
@@ -39,15 +42,22 @@ export default class Products extends React.Component // definition of the class
         }
         if(event.target.name == "cplus")
         {
-            var quantity = +$('quantity[id=' + event.target.id + ']').text();
-            $('quantity[id=' + event.target.id + ']').text(++quantity);
+            var url = "http://localhost:9000/myapi/cart/incrementcart";
+            axios.post(url, {id: event.target.id}).then(function(response){});
+            setTimeout(function(){
+                this.cartRefresh(); // call of the function cartRefresh
+            }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
         }
         if(event.target.name == "cminus")
         {
             var quantity = +$('quantity[id=' + event.target.id + ']').text();
             if(quantity>1)
             {
-                $('quantity[id=' + event.target.id + ']').text(--quantity);
+                var url = "http://localhost:9000/myapi/cart/decrementcart";
+                axios.post(url, {id: event.target.id}).then(function(response){});
+                setTimeout(function(){
+                    this.cartRefresh(); // call of the function cartRefresh
+                }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
             }
         }
     } // end of the function addtocart
@@ -88,7 +98,7 @@ export default class Products extends React.Component // definition of the class
                     </tbody>
                 </Table>
                 </div>
-                <p id="totalcost"></p>
+                <h3 id="totalcost">Total cost: {this.state.totalamount}</h3>
                 <Button name="checkout" bsStyle="primary" onClick={this.onChange}>Checkout</Button>
             </div>
         )}

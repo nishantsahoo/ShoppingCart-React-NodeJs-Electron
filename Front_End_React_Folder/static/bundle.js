@@ -12406,7 +12406,7 @@ var Products = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Products.__proto__ || Object.getPrototypeOf(Products)).call(this, props));
 
-        _this.state = { products: [] };
+        _this.state = { products: [], totalamount: 0 };
         _this.onChange = _this.onChange.bind(_this);
         _this.cartRefresh = _this.cartRefresh.bind(_this);
         return _this;
@@ -12426,9 +12426,12 @@ var Products = function (_React$Component) {
             var url = "http://localhost:9000/myapi/cart/getcart";
             _axios2.default.get(url).then(function (response) {
                 var products = response.data;
-                this.setState({ products: products });
+                var url = "http://localhost:9000/myapi/cart/totalamount";
+                _axios2.default.get(url).then(function (response) {
+                    var totalamount = response.data;
+                    this.setState({ products: products, totalamount: totalamount });
+                }.bind(this));
             }.bind(this));
-            // also set total amount to something on line 90
         } // end of the function cartRefresh
 
     }, {
@@ -12442,13 +12445,20 @@ var Products = function (_React$Component) {
                 this.cartRefresh(); // call of the function cartRefresh
             }
             if (event.target.name == "cplus") {
-                var quantity = +$('quantity[id=' + event.target.id + ']').text();
-                $('quantity[id=' + event.target.id + ']').text(++quantity);
+                var url = "http://localhost:9000/myapi/cart/incrementcart";
+                _axios2.default.post(url, { id: event.target.id }).then(function (response) {});
+                setTimeout(function () {
+                    this.cartRefresh(); // call of the function cartRefresh
+                }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
             }
             if (event.target.name == "cminus") {
                 var quantity = +$('quantity[id=' + event.target.id + ']').text();
                 if (quantity > 1) {
-                    $('quantity[id=' + event.target.id + ']').text(--quantity);
+                    var url = "http://localhost:9000/myapi/cart/decrementcart";
+                    _axios2.default.post(url, { id: event.target.id }).then(function (response) {});
+                    setTimeout(function () {
+                        this.cartRefresh(); // call of the function cartRefresh
+                    }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
                 }
             }
         } // end of the function addtocart
@@ -12556,7 +12566,12 @@ var Products = function (_React$Component) {
                             )
                         )
                     ),
-                    _react2.default.createElement("p", { id: "totalcost" }),
+                    _react2.default.createElement(
+                        "h3",
+                        { id: "totalcost" },
+                        "Total cost: ",
+                        this.state.totalamount
+                    ),
                     _react2.default.createElement(
                         _Button2.default,
                         { name: "checkout", bsStyle: "primary", onClick: this.onChange },
