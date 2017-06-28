@@ -48,6 +48,12 @@ npm start
 ##### Step 6: Open the browser and navigate to ``` http://localhost:8000/ ```
 
 ## Database settings
+*Database name: shoppingcart*
+
+*Username: root*
+
+*Password: root*
+
 
 #### 1. MySQL connection 
 ``` 
