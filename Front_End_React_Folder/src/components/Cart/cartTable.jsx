@@ -21,6 +21,7 @@ export default class Products extends React.Component // definition of the class
 
     cartRefresh() // definition of the function cartRefresh
     {
+
         var url="http://localhost:9000/myapi/cart/getcart";
         axios.get(url).then(function(response){
             var products = response.data;
@@ -51,7 +52,10 @@ export default class Products extends React.Component // definition of the class
             var url = "http://localhost:9000/myapi/cart/checkout";
             axios.post(url, {id: event.target.id}).then(function(response) {});
             alert('Thank you for shopping!');
-            this.cartRefresh(); // call of the function cartRefresh
+            setTimeout(function()
+            {
+                this.cartRefresh(); // call of the function cartRefresh
+            }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
         }
         if(event.target.name == "cplus")
         {
