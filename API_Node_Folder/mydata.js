@@ -3,7 +3,7 @@ const db = new Sequelize('shoppingcart', 'root', 'root', {
     host: 'localhost',
     dialect: 'mysql',
     pool: {
-        max: 5,
+        max: 10,
         min: 0,
         idle: 1000
     }
