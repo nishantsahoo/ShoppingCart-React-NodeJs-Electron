@@ -24,19 +24,28 @@ npm install
 
 ##### Step 2: Execute ./API_Node_Folder/seedProductsTable.js file to add products into the products table
 
-##### Step 3: Start the API(Express) server
+##### Step 3: Execute the webpack file
+*Note: Use "watch" with webpack to develop and deploy continuously*
+```
+cd Front_End_React_Folder
+.\node_modules\.bin\webpack --watch
+```
+
+##### Step 4: Start the API(Express) server
+*Note: Express server hosted at localhost:9000*
 ```
 cd API_Node_Folder
 npm start
 ```
 
-##### Step 4: Start the client(React) server
+##### Step 5: Start the client(React) server
+*Note: React server hosted at localhost:8000*
 ```
 cd Front_End_React_Folder
 npm start
 ```
 
-##### Step 5: Open the browser and navigate to ``` http://localhost:8000/ ```
+##### Step 6: Open the browser and navigate to ``` http://localhost:8000/ ```
 
 ## Database settings
 
