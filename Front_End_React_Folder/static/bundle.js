@@ -12824,7 +12824,7 @@ var Products = function (_React$Component) {
                                 { striped: true, bordered: true, condensed: true, hover: true, fill: true },
                                 _react2.default.createElement(
                                     "thead",
-                                    null,
+                                    { style: { fontWeight: 'bold' } },
                                     _react2.default.createElement(
                                         "tr",
                                         { style: { textAlign: 'center' } },
@@ -12913,7 +12913,7 @@ var Products = function (_React$Component) {
                         ),
                         _react2.default.createElement(
                             "button",
-                            { style: { marginRight: '0.1em', marginBottom: '0.1em', fontFamily: 'monospace', fontSize: '2em', width: 'wrap', alignSelf: 'right' }, className: "purple", name: "checkout", onClick: this.onChange },
+                            { style: { marginRight: '0.1em', marginBottom: '0.1em', fontFamily: 'monospace', fontSize: '1.5em', width: 'wrap', alignSelf: 'right' }, className: "purple", name: "checkout", onClick: this.onChange },
                             "Checkout"
                         )
                     )
@@ -13055,7 +13055,7 @@ var Products = function (_React$Component) {
                             { striped: true, bordered: true, condensed: true, hover: true, fill: true },
                             _react2.default.createElement(
                                 "thead",
-                                null,
+                                { style: { fontWeight: 'bold' } },
                                 _react2.default.createElement(
                                     "tr",
                                     { style: { textAlign: 'center' } },

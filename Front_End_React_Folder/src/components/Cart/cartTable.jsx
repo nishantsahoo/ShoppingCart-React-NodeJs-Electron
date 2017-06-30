@@ -106,7 +106,7 @@ export default class Products extends React.Component // definition of the class
                 <h3 style={{marginTop: '1.5em'}}>Number of products: {this.state.noOfProducts}</h3>
                 <div style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
                 <Table striped bordered condensed hover fill>
-                    <thead>
+                    <thead style={{fontWeight: 'bold'}}>
                     <tr style={{textAlign: 'center'}}>
                         <td>Name</td>
                         <td>Price</td>
@@ -129,7 +129,7 @@ export default class Products extends React.Component // definition of the class
                 </Table>
                 </div>
                 <h3 style={{fontSize: '2em'}} id="totalcost">Total cost: {this.state.totalamount}</h3>
-                <button style={{marginRight: '0.1em', marginBottom: '0.1em',fontFamily: 'monospace', fontSize: '2em', width: 'wrap', alignSelf: 'right'}} className="purple" name="checkout" onClick={this.onChange}>Checkout</button>
+                <button style={{marginRight: '0.1em', marginBottom: '0.1em',fontFamily: 'monospace', fontSize: '1.5em', width: 'wrap', alignSelf: 'right'}} className="purple" name="checkout" onClick={this.onChange}>Checkout</button>
                 </div>
             </div>
         )}
