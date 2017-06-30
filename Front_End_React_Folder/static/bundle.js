@@ -12795,7 +12795,7 @@ var Products = function (_React$Component) {
             if (this.state.products == "") {
                 return _react2.default.createElement(
                     "p",
-                    { style: { marginTop: '2em', fontSize: '1.5em', fontFamily: 'monospace' } },
+                    { style: { marginTop: '2em', fontSize: '2em', fontFamily: 'monospace' } },
                     "Cart is empty!"
                 );
             } else {
@@ -13039,15 +13039,16 @@ var Products = function (_React$Component) {
                 "div",
                 null,
                 _react2.default.createElement(
-                    _Panel2.default,
-                    { style: { width: '60%', marginLeft: '20%', marginTop: '2em' }, header: _react2.default.createElement(
-                            "h1",
-                            null,
-                            "Products"
-                        ) },
+                    "div",
+                    { className: "card", style: { width: '50%', marginLeft: '25%', marginTop: '2em' } },
                     _react2.default.createElement(
                         "div",
-                        { style: { width: '60%', marginLeft: '20%' } },
+                        { className: "card-header", style: { fontSize: '2em' } },
+                        "Products"
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "card-block", style: { width: '70%', marginLeft: '15%', marginTop: '1em' } },
                         _react2.default.createElement(
                             _Table2.default,
                             { striped: true, bordered: true, condensed: true, hover: true, fill: true },
@@ -14187,12 +14188,12 @@ var App = function (_React$Component) {
                 { style: { marginTop: '1em' } },
                 _react2.default.createElement(
                     _Button2.default,
-                    { id: "productsTab", bsStyle: "primary", name: "products", style: { marginRight: '1.5em' }, onClick: this.onButtonClick },
+                    { id: "productsTab", bsStyle: "primary", name: "products", style: { marginRight: '1.5em', fontSize: '1.5em' }, onClick: this.onButtonClick },
                     "Products"
                 ),
                 _react2.default.createElement(
                     _Button2.default,
-                    { id: "cartTab", bsStyle: "primary", name: "cart", onClick: this.onButtonClick, style: { marginLeft: '0.1em' } },
+                    { id: "cartTab", bsStyle: "primary", name: "cart", onClick: this.onButtonClick, style: { marginLeft: '0.1em', fontSize: '1.5em' } },
                     "Cart"
                 ),
                 currentComponent
