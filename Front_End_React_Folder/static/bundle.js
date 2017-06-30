@@ -12801,23 +12801,24 @@ var Products = function (_React$Component) {
             } else {
                 return _react2.default.createElement(
                     "div",
-                    null,
+                    { style: { fontFamily: 'monospace' } },
                     _react2.default.createElement(
-                        _Panel2.default,
-                        { style: { width: '60%', marginLeft: '20%', marginTop: '2em' }, header: _react2.default.createElement(
-                                "h1",
-                                null,
-                                "Cart"
-                            ) },
+                        "div",
+                        { className: "card", style: { width: '50%', marginLeft: '25%', marginTop: '2em' } },
+                        _react2.default.createElement(
+                            "div",
+                            { style: { fontSize: '2em' }, className: "card-header" },
+                            "Cart"
+                        ),
                         _react2.default.createElement(
                             "h3",
-                            null,
+                            { style: { marginTop: '1.5em' } },
                             "Number of products: ",
                             this.state.noOfProducts
                         ),
                         _react2.default.createElement(
                             "div",
-                            { style: { width: '50%', marginLeft: '25%' } },
+                            { style: { width: '70%', marginLeft: '15%', marginTop: '1em' } },
                             _react2.default.createElement(
                                 _Table2.default,
                                 { striped: true, bordered: true, condensed: true, hover: true, fill: true },
@@ -12906,13 +12907,13 @@ var Products = function (_React$Component) {
                         ),
                         _react2.default.createElement(
                             "h3",
-                            { id: "totalcost" },
+                            { style: { fontSize: '2em' }, id: "totalcost" },
                             "Total cost: ",
                             this.state.totalamount
                         ),
                         _react2.default.createElement(
                             "button",
-                            { className: "purple", name: "checkout", bsStyle: "primary", onClick: this.onChange },
+                            { style: { fontSize: '2em' }, className: "purple", name: "checkout", onClick: this.onChange },
                             "Checkout"
                         )
                     )

@@ -100,10 +100,11 @@ export default class Products extends React.Component // definition of the class
         }
         else {
         return (
-            <div>
-                <Panel style={{width: '60%', marginLeft: '20%', marginTop: '2em'}} header={<h1>Cart</h1>}>
-                <h3>Number of products: {this.state.noOfProducts}</h3>
-                <div style={{width: '50%', marginLeft: '25%'}}>
+            <div style={{fontFamily: 'monospace'}}>
+                <div className="card" style={{width: '50%', marginLeft: '25%', marginTop: '2em'}}>
+                <div style={{fontSize: '2em'}} className="card-header">Cart</div>
+                <h3 style={{marginTop: '1.5em'}}>Number of products: {this.state.noOfProducts}</h3>
+                <div style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
                 <Table striped bordered condensed hover fill>
                     <thead>
                     <tr style={{textAlign: 'center'}}>
@@ -127,9 +128,9 @@ export default class Products extends React.Component // definition of the class
                     </tbody>
                 </Table>
                 </div>
-                <h3 id="totalcost">Total cost: {this.state.totalamount}</h3>
-                <button className="purple" name="checkout" bsStyle="primary" onClick={this.onChange}>Checkout</button>
-                </Panel>
+                <h3 style={{fontSize: '2em'}} id="totalcost">Total cost: {this.state.totalamount}</h3>
+                <button style={{fontSize: '2em'}} className="purple" name="checkout" onClick={this.onChange}>Checkout</button>
+                </div>
             </div>
         )}
     } // end of the function definition
