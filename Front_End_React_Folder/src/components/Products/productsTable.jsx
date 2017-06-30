@@ -63,8 +63,8 @@ export default class Products extends React.Component // definition of the class
     {
         return (
             <div>
-                <div className="card" style={{width: '50%', marginLeft: '25%', marginTop: '2em'}}>
-                    <div className="card-header" style={{fontSize: '2em'}}>Products</div>
+                <div className="card" style={{width: '50%', marginLeft: '25%', marginTop: '2em', fontFamily: 'monospace'}}>
+                <div className="card-header" style={{fontSize: '2em'}}>Products</div>
                 <div className="card-block" style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
                     <Table striped bordered condensed hover fill>
                         <thead>

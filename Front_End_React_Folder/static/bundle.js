@@ -13041,7 +13041,7 @@ var Products = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                     "div",
-                    { className: "card", style: { width: '50%', marginLeft: '25%', marginTop: '2em' } },
+                    { className: "card", style: { width: '50%', marginLeft: '25%', marginTop: '2em', fontFamily: 'monospace' } },
                     _react2.default.createElement(
                         "div",
                         { className: "card-header", style: { fontSize: '2em' } },
