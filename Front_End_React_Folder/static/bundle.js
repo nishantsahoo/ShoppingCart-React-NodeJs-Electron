@@ -12795,7 +12795,7 @@ var Products = function (_React$Component) {
             if (this.state.products == "") {
                 return _react2.default.createElement(
                     "p",
-                    { style: { marginTop: '2em', fontSize: '2em', fontFamily: 'monospace' } },
+                    { style: { marginTop: '2em', fontSize: '2em', fontFamily: 'monospace', color: '#FFFFFF' } },
                     "Cart is empty!"
                 );
             } else {
