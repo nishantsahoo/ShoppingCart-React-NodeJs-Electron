@@ -12804,7 +12804,7 @@ var Products = function (_React$Component) {
                     { style: { fontFamily: 'monospace' } },
                     _react2.default.createElement(
                         "div",
-                        { className: "card", style: { width: '50%', marginLeft: '25%', marginTop: '2em' } },
+                        { className: "card", style: { textAlign: 'center', width: '50%', marginLeft: '25%', marginTop: '2em' } },
                         _react2.default.createElement(
                             "div",
                             { style: { fontSize: '2em' }, className: "card-header" },
@@ -12913,7 +12913,7 @@ var Products = function (_React$Component) {
                         ),
                         _react2.default.createElement(
                             "button",
-                            { style: { fontSize: '2em' }, className: "purple", name: "checkout", onClick: this.onChange },
+                            { style: { marginRight: '0.1em', marginBottom: '0.1em', fontFamily: 'monospace', fontSize: '2em', width: 'wrap', alignSelf: 'right' }, className: "purple", name: "checkout", onClick: this.onChange },
                             "Checkout"
                         )
                     )
@@ -13126,7 +13126,7 @@ var Products = function (_React$Component) {
                                             null,
                                             _react2.default.createElement(
                                                 "button",
-                                                { className: "blue", bsStyle: "primary", name: 'addtocart', id: JSON.stringify(product), onClick: this.onChange },
+                                                { className: "blue", style: { fontFamily: 'monospace' }, name: 'addtocart', id: JSON.stringify(product), onClick: this.onChange },
                                                 "Add to Cart"
                                             )
                                         )
@@ -14188,14 +14188,18 @@ var App = function (_React$Component) {
                 "div",
                 { style: { marginTop: '1em' } },
                 _react2.default.createElement(
-                    _Button2.default,
-                    { id: "productsTab", bsStyle: "primary", name: "products", style: { marginRight: '1.5em', fontSize: '1.5em' }, onClick: this.onButtonClick },
-                    "Products"
-                ),
-                _react2.default.createElement(
-                    _Button2.default,
-                    { id: "cartTab", bsStyle: "primary", name: "cart", onClick: this.onButtonClick, style: { marginLeft: '0.1em', fontSize: '1.5em' } },
-                    "Cart"
+                    "div",
+                    { style: { alignSelf: 'center' } },
+                    _react2.default.createElement(
+                        _Button2.default,
+                        { bsStyle: "info", id: "productsTab", name: "products", style: { marginRight: '1.5em', fontSize: '1.5em' }, onClick: this.onButtonClick },
+                        "Products"
+                    ),
+                    _react2.default.createElement(
+                        _Button2.default,
+                        { id: "cartTab", name: "cart", onClick: this.onButtonClick, bsStyle: "info", style: { marginLeft: '1.5em', fontSize: '1.5em' } },
+                        "Cart"
+                    )
                 ),
                 currentComponent
             );

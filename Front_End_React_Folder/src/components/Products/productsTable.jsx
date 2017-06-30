@@ -82,7 +82,7 @@ export default class Products extends React.Component // definition of the class
                                         <td>{product.name}</td>
                                         <td><price>{product.price}</price></td>
                                         <td><button className="red" name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
-                                        <td><button className="blue" bsStyle="primary" name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</button></td>
+                                        <td><button className="blue" style={{fontFamily: 'monospace'}} name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</button></td>
                                     </tr>
                             );
                         }.bind(this))}
