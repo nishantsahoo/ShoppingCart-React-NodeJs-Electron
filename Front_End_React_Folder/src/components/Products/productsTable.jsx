@@ -1,9 +1,7 @@
 import React from "react";
 import axios from "axios";
-// import formurlencoded from "form-urlencoded";
+import ProductRow from "./productsRow";
 import Table from "react-bootstrap/es/Table";
-// import Button from "react-bootstrap/es/Button";
-import Panel from "react-bootstrap/es/Panel"
 
 export default class Products extends React.Component // definition of the class Products
 {
@@ -78,6 +76,7 @@ export default class Products extends React.Component // definition of the class
                         <tbody style={{overflowY: 'auto', height: '50%'}}>
                         {this.state.products.map(function(product){
                             return (
+                                    // <ProductRow product={product}/>
                                     <tr style={{textAlign: 'center'}}>
                                         <td>{product.name}</td>
                                         <td><price>{product.price}</price></td>
