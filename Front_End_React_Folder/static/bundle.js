@@ -12658,7 +12658,7 @@ var Products = function (_React$Component) {
                         ),
                         _react2.default.createElement(
                             "button",
-                            { style: { marginRight: '0.1em', marginBottom: '0.1em', fontFamily: 'monospace', fontSize: '1.5em', width: 'wrap', alignSelf: 'right' }, className: "purple", name: "checkout", onClick: this.onChange },
+                            { style: { marginRight: '0.1em', marginBottom: '0.1em', fontFamily: 'monospace', fontSize: '1.5em', width: 'wrap', alignSelf: 'center' }, className: "purple", name: "checkout", onClick: this.onChange },
                             "Checkout"
                         )
                     )

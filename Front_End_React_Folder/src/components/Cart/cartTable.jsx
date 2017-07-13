@@ -129,7 +129,7 @@ export default class Products extends React.Component // definition of the class
                 </Table>
                 </div>
                 <h3 style={{fontSize: '2em'}} id="totalcost">Total cost: {this.state.totalamount}</h3>
-                <button style={{marginRight: '0.1em', marginBottom: '0.1em',fontFamily: 'monospace', fontSize: '1.5em', width: 'wrap', alignSelf: 'right'}} className="purple" name="checkout" onClick={this.onChange}>Checkout</button>
+                <button style={{marginRight: '0.1em', marginBottom: '0.1em', fontFamily: 'monospace', fontSize: '1.5em', width: 'wrap', alignSelf: 'center'}} className="purple" name="checkout" onClick={this.onChange}>Checkout</button>
                 </div>
             </div>
         )}
