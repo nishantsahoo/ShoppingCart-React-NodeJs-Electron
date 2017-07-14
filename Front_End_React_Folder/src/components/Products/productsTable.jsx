@@ -1,9 +1,7 @@
 import React from "react";
 import axios from "axios";
-// import formurlencoded from "form-urlencoded";
 import Table from "react-bootstrap/es/Table";
-// import Button from "react-bootstrap/es/Button";
-import Panel from "react-bootstrap/es/Panel"
+import ProductRow from "./productsRow";
 
 export default class Products extends React.Component // definition of the class Products
 {
@@ -63,10 +61,11 @@ export default class Products extends React.Component // definition of the class
     {
         return (
             <div>
-                <Panel style={{width: '60%', marginLeft: '20%', marginTop: '2em'}} header={<h1>Products</h1>}>
-                <div style={{width: '60%', marginLeft: '20%'}}>
+                <div className="card" style={{width: '50%', marginLeft: '25%', marginTop: '2em', fontFamily: 'monospace'}}>
+                <div className="card-header" style={{fontSize: '2em'}}>Products</div>
+                <div className="card-block" style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
                     <Table striped bordered condensed hover fill>
-                        <thead>
+                        <thead style={{fontWeight: 'bold'}}>
                             <tr style={{textAlign: 'center'}}>
                                 <td>Name</td>
                                 <td>Price</td>
@@ -77,18 +76,19 @@ export default class Products extends React.Component // definition of the class
                         <tbody style={{overflowY: 'auto', height: '50%'}}>
                         {this.state.products.map(function(product){
                             return (
+                                    // <ProductRow product={product}/>
                                     <tr style={{textAlign: 'center'}}>
                                         <td>{product.name}</td>
                                         <td><price>{product.price}</price></td>
                                         <td><button className="red" name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
-                                        <td><button className="blue" bsStyle="primary" name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</button></td>
+                                        <td><button className="blue" style={{fontFamily: 'monospace'}} name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</button></td>
                                     </tr>
                             );
                         }.bind(this))}
                         </tbody>
                     </Table>
                 </div>
-                </Panel>
+                </div>
             </div>
         )
     } // end of the function definition

@@ -1,8 +1,6 @@
 import React from "react";
 import axios from "axios";
 import Table from "react-bootstrap/es/Table";
-// import Button from "react-bootstrap/es/Button";
-import Panel from "react-bootstrap/es/Panel"
 
 export default class Products extends React.Component // definition of the class Products
 {
@@ -21,6 +19,7 @@ export default class Products extends React.Component // definition of the class
 
     cartRefresh() // definition of the function cartRefresh
     {
+
         var url="http://localhost:9000/myapi/cart/getcart";
         axios.get(url).then(function(response){
             var products = response.data;
@@ -51,7 +50,10 @@ export default class Products extends React.Component // definition of the class
             var url = "http://localhost:9000/myapi/cart/checkout";
             axios.post(url, {id: event.target.id}).then(function(response) {});
             alert('Thank you for shopping!');
-            this.cartRefresh(); // call of the function cartRefresh
+            setTimeout(function()
+            {
+                this.cartRefresh(); // call of the function cartRefresh
+            }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
         }
         if(event.target.name == "cplus")
         {
@@ -91,17 +93,18 @@ export default class Products extends React.Component // definition of the class
         if(this.state.products=="")
         {
             return (
-                <p style={{marginTop:'2em', fontSize: '1.5em', fontFamily: 'monospace'}}>Cart is empty!</p>
+                <p style={{marginTop:'2em', fontSize: '2em', fontFamily: 'monospace', color: '#FFFFFF'}}>Cart is empty!</p>
             )
         }
         else {
         return (
-            <div>
-                <Panel style={{width: '60%', marginLeft: '20%', marginTop: '2em'}} header={<h1>Cart</h1>}>
-                <h3>Number of products: {this.state.noOfProducts}</h3>
-                <div style={{width: '50%', marginLeft: '25%'}}>
+            <div style={{fontFamily: 'monospace'}}>
+                <div className="card" style={{textAlign:'center', width: '50%', marginLeft: '25%', marginTop: '2em'}}>
+                <div style={{fontSize: '2em'}} className="card-header">Cart</div>
+                <h3 style={{marginTop: '1.5em'}}>Number of products: {this.state.noOfProducts}</h3>
+                <div style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
                 <Table striped bordered condensed hover fill>
-                    <thead>
+                    <thead style={{fontWeight: 'bold'}}>
                     <tr style={{textAlign: 'center'}}>
                         <td>Name</td>
                         <td>Price</td>
@@ -112,7 +115,7 @@ export default class Products extends React.Component // definition of the class
                     <tbody style={{overflowY: 'auto', height: '50%'}}>
                     {this.state.products.map(function(product){
                         return (
-                            <tr  style={{textAlign: 'center'}}>
+                            <tr style={{textAlign: 'center'}}>
                                 <td><button className="red" name={'remove'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>X</button>{product.name}</td>
                                 <td><price>{product.price}</price></td>
                                 <td><button className="red" name={'cminus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'cplus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
@@ -123,9 +126,9 @@ export default class Products extends React.Component // definition of the class
                     </tbody>
                 </Table>
                 </div>
-                <h3 id="totalcost">Total cost: {this.state.totalamount}</h3>
-                <button className="purple" name="checkout" bsStyle="primary" onClick={this.onChange}>Checkout</button>
-                </Panel>
+                <h3 style={{fontSize: '2em'}} id="totalcost">Total cost: {this.state.totalamount}</h3>
+                <button style={{marginRight: '0.1em', marginBottom: '0.1em', fontFamily: 'monospace', fontSize: '1.5em', width: 'wrap', alignSelf: 'center'}} className="purple" name="checkout" onClick={this.onChange}>Checkout</button>
+                </div>
             </div>
         )}
     } // end of the function definition

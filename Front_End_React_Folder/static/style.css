@@ -1,6 +1,8 @@
-/*body{*/
-    /*font-family:'Open Sans';*/
-    /*font-style:condensed;*/
+body{
+    font-family:'Open Sans';
+    font-style:condensed;
+    background: #466368;
+    background: linear-gradient(to right, #f6f1d3, #648880 85%, #293f50);
     /*background: #5b2072;*/
     /*background: -moz-radial-gradient(center, ellipse cover,  #5b2072 0%, #5d1566 50%, #251a41 100%); !* FF3.6+ *!*/
     /*background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#5b2072), color-stop(50%,#5d1566), color-stop(100%,#251a41)); !* Chrome,Safari4+ *!*/
@@ -8,8 +10,8 @@
     /*background: -o-radial-gradient(center, ellipse cover,  #5b2072 0%,#5d1566 50%,#251a41 100%); !* Opera 12+ *!*/
     /*background: -ms-radial-gradient(center, ellipse cover,  #5b2072 0%,#5d1566 50%,#251a41 100%); !* IE10+ *!*/
     /*background: radial-gradient(ellipse at center,  #5b2072 0%,#5d1566 50%,#251a41 100%); !* W3C *!*/
-    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b2072', endColorstr='#251a41',GradientType=1 ); !* IE6-9 fallback on horizontal gradient *!*/
-/*}*/
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b2072', endColorstr='#251a41',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
 
 .green:hover{
     background:#03C9A9 !important;
@@ -54,67 +56,3 @@
     -ms-transition:0.4s;
     transition:0.4s;
 }
-
-/*button{*/
-    /*float:left;*/
-    /*list-style:none;*/
-    /*text-decoration:none;*/
-    /*font:700 10px monospace;*/
-    /*padding:0px 4px 0px 4px;*/
-    /*border:3px solid #999faf;*/
-    /*color:#999faf;*/
-    /*display:inline-block;*/
-    /*text-transform:uppercase;*/
-    /*letter-spacing:2px;*/
-    /*margin-right:10px;*/
-    /*position:relative;*/
-    /*text-align: center;*/
-    /*align-self: center;*/
-/*}*/
-
-/*td*/
-/*{*/
-    /*text-align: center;*/
-/*}*/
-/*th*/
-/*{*/
-    /*text-align: center;*/
-/*}*/
-
-/*tr {*/
-    /*text-align: center;*/
-/*}*/
-
-/*.table thead th*/
-/*{*/
-    /*text-align: center;*/
-/*}*/
-/*table {*/
-    /*text-align: center;*/
-/*}*/
-
-/*#totcost*/
-/*{*/
-    /*border-top: solid 2px;*/
-    /*text-align: center;*/
-    /*align-content: center;*/
-/*}*/
-
-/*#totalCost*/
-/*{*/
-    /*font: monospace;*/
-    /*color: #663399;*/
-    /*font-size: 1.3em;*/
-/*}*/
-
-/*.table tbody tr td*/
-/*{*/
-    /*padding-top: 1em;*/
-    /*margin-top: 2em;*/
-/*}*/
-
-/*.noOfProducts*/
-/*{*/
-    /*font-size: 1.3em;*/
-    /*color: purple;*/
-/*}*/
