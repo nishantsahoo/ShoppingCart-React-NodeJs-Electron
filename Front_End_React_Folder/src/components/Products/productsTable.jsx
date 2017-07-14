@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import ProductRow from "./productsRow";
 import Table from "react-bootstrap/es/Table";
+import ProductRow from "./productsRow";
 
 export default class Products extends React.Component // definition of the class Products
 {
