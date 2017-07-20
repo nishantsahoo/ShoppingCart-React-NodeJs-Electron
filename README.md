@@ -3,10 +3,10 @@
 <b>Name:</b> MyCart
 
 <b>Description:</b> Shopping cart implementation using React, NodeJs, MySQL, ExpressJs, axios, cors, sequelize, Babel, 
-Webpack, and Electron.
+Webpack, and Electron. (MERN Stack)
 
 ## Prerequisites
-<a href="https://nodejs.org/">NodeJS</a> and <a href="https://www.mysql.com/">MySQL</a> should be installed. 
+<a href="https://nodejs.org/">NodeJS</a> and <a href="https://dev.mysql.com/downloads/mysql/">MySQL Community Server</a> should be installed. 
 
 ## Installation
 ```
@@ -26,30 +26,36 @@ cd Front_End_React_Folder
 npm install
 ```
 
-##### Step 2: Execute ./API_Node_Folder/seedProductsTable.js file to add products into the products table
+##### Step 2: Create the table "shoppingcart" using MySQL
+Open the MySQL Command Line Client and execute the following code
+```
+create database shoppingcart
+```
 
-##### Step 3: Execute the webpack file
+##### Step 3: Execute ./API_Node_Folder/seedProductsTable.js file to add products into the products table
+
+##### Step 4: Execute the webpack file
 *Note: Use "watch" with webpack to develop and deploy continuously*
 ```
 cd Front_End_React_Folder
 .\node_modules\.bin\webpack --watch
 ```
 
-##### Step 4: Start the API(Express) server
+##### Step 5: Start the API(Express) server
 *Note: Express server hosted at localhost:9000*
 ```
 cd API_Node_Folder
 npm start
 ```
 
-##### Step 5: Start the Client (React) server
+##### Step 6: Start the Client (React) server
 *Note: React server hosted at localhost:8000*
 ```
 cd Front_End_React_Folder
 npm run webapp
 ```
 
-##### Step 6: Open the browser and navigate to ``` http://localhost:8000/ ```
+##### Step 7: Open the browser and navigate to ``` http://localhost:8000/ ```
 
 <h3> 2. Desktop Application</h3>
 
@@ -62,23 +68,29 @@ cd Front_End_React_Folder
 npm install
 ```
 
-##### Step 2: Execute ./API_Node_Folder/seedProductsTable.js file to add products into the products table
+##### Step 2: Create the table "shoppingcart" using MySQL
+Open the MySQL Command Line Client and execute the following code
+```
+create database shoppingcart
+```
 
-##### Step 3: Execute the webpack file
+##### Step 3: Execute ./API_Node_Folder/seedProductsTable.js file to add products into the products table
+
+##### Step 4: Execute the webpack file
 *Note: Use "watch" with webpack to develop and deploy continuously*
 ```
 cd Front_End_React_Folder
 .\node_modules\.bin\webpack --watch
 ```
 
-##### Step 4: Start the API(Express) server
+##### Step 5: Start the API(Express) server
 *Note: Express server hosted at localhost:9000*
 ```
 cd API_Node_Folder
 npm start
 ```
 
-##### Step 5: Launch the desktop application
+##### Step 6: Launch the desktop application
 ```
 cd Front_End_React_Folder
 ```
