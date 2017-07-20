@@ -14,8 +14,8 @@ function createWindow() {
   // Create the browser window.
   const express = require('./express'); //your express app
   mainWindow = new BrowserWindow({
-    width: 1600,
-    height: 1600,
+    width: 1920,
+    height: 1080,
     minWidth: 300,
     minHeight: 200
   });
