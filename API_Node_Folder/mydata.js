@@ -40,9 +40,9 @@ function getProducts () { return Product.findAll(); } // end of the function get
 
 function addToProducts(product) // definition of the function addToProducts
 {
-    Product.findById(product.id).then(cartItem => {
-        return;
-})
+    // Product.findById(product.id).then(cartItem => {
+    //     return;
+    // })
     return Product.create(
         {
             name: product.name,
