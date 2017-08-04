@@ -12478,7 +12478,7 @@ var Products = function (_React$Component) {
                         )
                     )
                 );
-            }
+            } // else
         } // end of the function definition
 
     }]);
@@ -12610,23 +12610,44 @@ var Products = function (_React$Component) {
                             _Table2.default,
                             { striped: true, bordered: true, condensed: true, hover: true, fill: true },
                             _react2.default.createElement(
+                                "thead",
+                                null,
+                                _react2.default.createElement(
+                                    "tr",
+                                    { style: { textAlign: 'center' } },
+                                    _react2.default.createElement(
+                                        "td",
+                                        null,
+                                        "Name"
+                                    ),
+                                    _react2.default.createElement(
+                                        "td",
+                                        null,
+                                        "Price"
+                                    ),
+                                    _react2.default.createElement(
+                                        "td",
+                                        null,
+                                        "Quantity"
+                                    ),
+                                    _react2.default.createElement(
+                                        "td",
+                                        null,
+                                        "Add to Cart"
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
                                 "tbody",
                                 { style: { overflowY: 'auto', height: '50%' } },
                                 this.state.products.map(function (product) {
-                                    return _react2.default.createElement(_productsRow2.default, { product: product, eventHandler: this.onChange })
-                                    // <tr style={{textAlign: 'center'}}>
-                                    //     <td>{product.name}</td>
-                                    //     <td><price>{product.price}</price></td>
-                                    //     <td><button className="red" name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
-                                    //     <td><button className="blue" style={{fontFamily: 'monospace'}} name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</button></td>
-                                    // </tr>
-                                    ;
+                                    return _react2.default.createElement(_productsRow2.default, { product: product, eventHandler: this.onChange });
                                 }.bind(this))
                             )
                         )
                     )
                 )
-            );
+            ); // return
         } // end of the function definition
 
     }]);
@@ -13711,9 +13732,7 @@ var App = function (_React$Component) {
 ); // end of the class definition
 
 var app = _react2.default.createElement(App, null);
-// console.log(app);
 var node = document.getElementById("app");
-// console.log(node);
 ReactDOM.render(app, node);
 
 /***/ }),
@@ -13752,12 +13771,15 @@ var ProductRow = function (_React$Component) {
 
     _createClass(ProductRow, [{
         key: "onChangeHandler",
-        value: function onChangeHandler(event) {
+        value: function onChangeHandler(event) // definition of the function onChangeHandler
+        {
             this.props.eventHandler(event);
-        }
+        } // end of the function definition
+
     }, {
         key: "render",
-        value: function render() {
+        value: function render() // render
+        {
             var product = this.props.product;
             return _react2.default.createElement(
                 "tr",
@@ -13805,13 +13827,16 @@ var ProductRow = function (_React$Component) {
                     )
                 )
             );
-        }
+        } // render
+
     }]);
 
     return ProductRow;
-}(_react2.default.Component);
+}(_react2.default.Component // definition of the class ProductRow
+);
 
 exports.default = ProductRow;
+; // end of the class definition
 
 /***/ }),
 /* 167 */

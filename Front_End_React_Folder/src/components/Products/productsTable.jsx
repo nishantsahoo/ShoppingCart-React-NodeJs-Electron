@@ -65,6 +65,14 @@ export default class Products extends React.Component // definition of the class
                     <div className="card-header" style={{fontSize: '2em'}}>Products</div>
                         <div className="card-block" style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
                         <Table striped bordered condensed hover fill>
+                            <thead>
+                                <tr style={{textAlign: 'center'}}>
+                                    <td>Name</td>
+                                    <td>Price</td>
+                                    <td>Quantity</td>
+                                    <td>Add to Cart</td>
+                                </tr>
+                            </thead>
                             <tbody style={{overflowY: 'auto', height: '50%'}}>
                                 {this.state.products.map(function(product){
                                     return (
