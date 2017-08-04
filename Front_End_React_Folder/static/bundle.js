@@ -12610,34 +12610,6 @@ var Products = function (_React$Component) {
                             _Table2.default,
                             { striped: true, bordered: true, condensed: true, hover: true, fill: true },
                             _react2.default.createElement(
-                                "thead",
-                                { style: { fontWeight: 'bold' } },
-                                _react2.default.createElement(
-                                    "tr",
-                                    { style: { textAlign: 'center' } },
-                                    _react2.default.createElement(
-                                        "td",
-                                        null,
-                                        "Name"
-                                    ),
-                                    _react2.default.createElement(
-                                        "td",
-                                        null,
-                                        "Price"
-                                    ),
-                                    _react2.default.createElement(
-                                        "td",
-                                        null,
-                                        "Quantity"
-                                    ),
-                                    _react2.default.createElement(
-                                        "td",
-                                        null,
-                                        "Add to Cart"
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
                                 "tbody",
                                 { style: { overflowY: 'auto', height: '50%' } },
                                 this.state.products.map(function (product) {
