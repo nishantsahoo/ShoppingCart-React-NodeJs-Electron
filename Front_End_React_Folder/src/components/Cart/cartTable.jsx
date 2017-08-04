@@ -96,41 +96,41 @@ export default class Products extends React.Component // definition of the class
                 <p style={{marginTop:'2em', fontSize: '2em', fontFamily: 'monospace', color: '#FFFFFF'}}>Cart is empty!</p>
             )
         }
-        else {
-        return (
-            <div style={{fontFamily: 'monospace'}}>
-                <div className="card" style={{textAlign:'center', width: '50%', marginLeft: '25%', marginTop: '2em'}}>
-                <div style={{fontSize: '2em'}} className="card-header">Cart</div>
-                <h3 style={{marginTop: '1.5em'}}>Number of products: {this.state.noOfProducts}</h3>
-                <div style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
-                <Table striped bordered condensed hover fill>
-                    <thead style={{fontWeight: 'bold'}}>
-                    <tr style={{textAlign: 'center'}}>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Quantity</td>
-                        <td>Amount</td>
-                    </tr>
-                    </thead>
-                    <tbody style={{overflowY: 'auto', height: '50%'}}>
-                    {this.state.products.map(function(product){
-                        return (
-                            <tr style={{textAlign: 'center'}}>
-                                <td><button className="red" name={'remove'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>X</button>{product.name}</td>
-                                <td><price>{product.price}</price></td>
-                                <td><button className="red" name={'cminus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'cplus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
-                                <td id={product.id}>{product.amount}</td>
-                            </tr>
-                        )
-                    }.bind(this))}
-                    </tbody>
-                </Table>
+        else
+        {
+            return (
+                <div style={{fontFamily: 'monospace'}}>
+                    <div className="card" style={{textAlign:'center', width: '50%', marginLeft: '25%', marginTop: '2em'}}>
+                        <div style={{fontSize: '2em'}} className="card-header">Cart</div>
+                            <h3 style={{marginTop: '1.5em'}}>Number of products: {this.state.noOfProducts}</h3>
+                            <div style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
+                                <Table striped bordered condensed hover fill>
+                                    <thead style={{fontWeight: 'bold'}}>
+                                    <tr style={{textAlign: 'center'}}>
+                                        <td>Name</td>
+                                        <td>Price</td>
+                                        <td>Quantity</td>
+                                        <td>Amount</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody style={{overflowY: 'auto', height: '50%'}}>
+                                    {this.state.products.map(function(product){
+                                        return (
+                                            <tr style={{textAlign: 'center'}}>
+                                                <td><button className="red" name={'remove'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>X</button>{product.name}</td>
+                                                <td><price>{product.price}</price></td>
+                                                <td><button className="red" name={'cminus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'cplus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
+                                                <td id={product.id}>{product.amount}</td>
+                                            </tr>
+                                        )
+                                    }.bind(this))}
+                                    </tbody>
+                                </Table>
+                            </div>
+                        <h3 style={{fontSize: '2em'}} id="totalcost">Total cost: {this.state.totalamount}</h3>
+                        <button style={{marginRight: '0.1em', marginBottom: '0.1em', fontFamily: 'monospace', fontSize: '1.5em', width: 'wrap', alignSelf: 'center'}} className="purple" name="checkout" onClick={this.onChange}>Checkout</button>
+                    </div>
                 </div>
-                <h3 style={{fontSize: '2em'}} id="totalcost">Total cost: {this.state.totalamount}</h3>
-                <button style={{marginRight: '0.1em', marginBottom: '0.1em', fontFamily: 'monospace', fontSize: '1.5em', width: 'wrap', alignSelf: 'center'}} className="purple" name="checkout" onClick={this.onChange}>Checkout</button>
-                </div>
-            </div>
-        )}
+            )} // else
     } // end of the function definition
-
 } // end of the class definition

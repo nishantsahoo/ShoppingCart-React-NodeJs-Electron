@@ -62,35 +62,20 @@ export default class Products extends React.Component // definition of the class
         return (
             <div>
                 <div className="card" style={{width: '50%', marginLeft: '25%', marginTop: '2em', fontFamily: 'monospace'}}>
-                <div className="card-header" style={{fontSize: '2em'}}>Products</div>
-                <div className="card-block" style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
-                    <Table striped bordered condensed hover fill>
-                        {/*<thead style={{fontWeight: 'bold'}}>*/}
-                            {/*<tr style={{textAlign: 'center'}}>*/}
-                                {/*<td>Name</td>*/}
-                                {/*<td>Price</td>*/}
-                                {/*<td>Quantity</td>*/}
-                                {/*<td>Add to Cart</td>*/}
-                            {/*</tr>*/}
-                        {/*</thead>*/}
-                        <tbody style={{overflowY: 'auto', height: '50%'}}>
-                        {this.state.products.map(function(product){
-                            return (
-                                    <ProductRow product={product} eventHandler={this.onChange}/>
-                                    // <tr style={{textAlign: 'center'}}>
-                                    //     <td>{product.name}</td>
-                                    //     <td><price>{product.price}</price></td>
-                                    //     <td><button className="red" name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
-                                    //     <td><button className="blue" style={{fontFamily: 'monospace'}} name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</button></td>
-                                    // </tr>
-                            );
-                        }.bind(this))}
-                        </tbody>
-                    </Table>
-                </div>
+                    <div className="card-header" style={{fontSize: '2em'}}>Products</div>
+                        <div className="card-block" style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
+                        <Table striped bordered condensed hover fill>
+                            <tbody style={{overflowY: 'auto', height: '50%'}}>
+                                {this.state.products.map(function(product){
+                                    return (
+                                        <ProductRow product={product} eventHandler={this.onChange}/>
+                                    );
+                                }.bind(this))}
+                            </tbody>
+                        </Table>
+                    </div>
                 </div>
             </div>
-        )
+        ) // return
     } // end of the function definition
-
 } // end of the class definition
