@@ -347,45 +347,43 @@ var emptyFunction = __webpack_require__(9);
 var warning = emptyFunction;
 
 if (process.env.NODE_ENV !== 'production') {
-  (function () {
-    var printWarning = function printWarning(format) {
-      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
+  var printWarning = function printWarning(format) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var argIndex = 0;
+    var message = 'Warning: ' + format.replace(/%s/g, function () {
+      return args[argIndex++];
+    });
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  warning = function warning(condition, format) {
+    if (format === undefined) {
+      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+
+    if (format.indexOf('Failed Composite propType: ') === 0) {
+      return; // Ignore CompositeComponent proptype check.
+    }
+
+    if (!condition) {
+      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+        args[_key2 - 2] = arguments[_key2];
       }
 
-      var argIndex = 0;
-      var message = 'Warning: ' + format.replace(/%s/g, function () {
-        return args[argIndex++];
-      });
-      if (typeof console !== 'undefined') {
-        console.error(message);
-      }
-      try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-      } catch (x) {}
-    };
-
-    warning = function warning(condition, format) {
-      if (format === undefined) {
-        throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-      }
-
-      if (format.indexOf('Failed Composite propType: ') === 0) {
-        return; // Ignore CompositeComponent proptype check.
-      }
-
-      if (!condition) {
-        for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-          args[_key2 - 2] = arguments[_key2];
-        }
-
-        printWarning.apply(undefined, [format].concat(args));
-      }
-    };
-  })();
+      printWarning.apply(undefined, [format].concat(args));
+    }
+  };
 }
 
 module.exports = warning;
@@ -8158,18 +8156,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @typechecks
  */
@@ -12650,55 +12641,14 @@ var Products = function (_React$Component) {
                                 "tbody",
                                 { style: { overflowY: 'auto', height: '50%' } },
                                 this.state.products.map(function (product) {
-                                    return (
-                                        // <ProductRow product={product}/>
-                                        _react2.default.createElement(
-                                            "tr",
-                                            { style: { textAlign: 'center' } },
-                                            _react2.default.createElement(
-                                                "td",
-                                                null,
-                                                product.name
-                                            ),
-                                            _react2.default.createElement(
-                                                "td",
-                                                null,
-                                                _react2.default.createElement(
-                                                    "price",
-                                                    null,
-                                                    product.price
-                                                )
-                                            ),
-                                            _react2.default.createElement(
-                                                "td",
-                                                null,
-                                                _react2.default.createElement(
-                                                    "button",
-                                                    { className: "red", name: 'minus', id: product.id, onClick: this.onChange, style: { float: 'left' } },
-                                                    "-"
-                                                ),
-                                                _react2.default.createElement(
-                                                    "quantity",
-                                                    { id: product.id },
-                                                    product.quantity
-                                                ),
-                                                _react2.default.createElement(
-                                                    "button",
-                                                    { className: "green", name: 'plus', id: product.id, onClick: this.onChange, style: { float: 'right' } },
-                                                    "+"
-                                                )
-                                            ),
-                                            _react2.default.createElement(
-                                                "td",
-                                                null,
-                                                _react2.default.createElement(
-                                                    "button",
-                                                    { className: "blue", style: { fontFamily: 'monospace' }, name: 'addtocart', id: JSON.stringify(product), onClick: this.onChange },
-                                                    "Add to Cart"
-                                                )
-                                            )
-                                        )
-                                    );
+                                    return _react2.default.createElement(_productsRow2.default, { product: product, eventHandler: this.onChange })
+                                    // <tr style={{textAlign: 'center'}}>
+                                    //     <td>{product.name}</td>
+                                    //     <td><price>{product.price}</price></td>
+                                    //     <td><button className="red" name={'minus'} id={product.id} onClick={this.onChange} style={{float: 'left'}}>-</button><quantity id={product.id}>{product.quantity}</quantity><button className="green" name={'plus'} id={product.id} onClick={this.onChange} style={{float: 'right'}}>+</button></td>
+                                    //     <td><button className="blue" style={{fontFamily: 'monospace'}} name={'addtocart'} id={JSON.stringify(product)} onClick={this.onChange}>Add to Cart</button></td>
+                                    // </tr>
+                                    ;
                                 }.bind(this))
                             )
                         )
@@ -13829,6 +13779,11 @@ var ProductRow = function (_React$Component) {
     }
 
     _createClass(ProductRow, [{
+        key: "onChangeHandler",
+        value: function onChangeHandler(event) {
+            this.props.eventHandler(event);
+        }
+    }, {
         key: "render",
         value: function render() {
             var product = this.props.product;
@@ -13854,7 +13809,7 @@ var ProductRow = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         "button",
-                        { className: "red", name: 'minus', id: product.id, onClick: this.onChange, style: { float: 'left' } },
+                        { className: "red", name: 'minus', id: product.id, onClick: this.onChangeHandler.bind(this), style: { float: 'left' } },
                         "-"
                     ),
                     _react2.default.createElement(
@@ -13864,7 +13819,7 @@ var ProductRow = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         "button",
-                        { className: "green", name: 'plus', id: product.id, onClick: this.onChange, style: { float: 'right' } },
+                        { className: "green", name: 'plus', id: product.id, onClick: this.onChangeHandler.bind(this), style: { float: 'right' } },
                         "+"
                     )
                 ),
@@ -13873,7 +13828,7 @@ var ProductRow = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         "button",
-                        { className: "blue", style: { fontFamily: 'monospace' }, name: 'addtocart', id: JSON.stringify(product), onClick: this.onChange },
+                        { className: "blue", style: { fontFamily: 'monospace' }, name: 'addtocart', id: JSON.stringify(product), onClick: this.onChangeHandler.bind(this) },
                         "Add to Cart"
                     )
                 )
