@@ -14,8 +14,8 @@ export default class Products extends React.Component // definition of the class
 
     componentDidMount() // definition of the function componentDidMount
     {
-        var url="http://localhost:9000/myapi/products/getproducts";
-        axios.get(url).then(function(response){
+        const URL="http://localhost:9000/myapi/products/getproducts";
+        axios.get(URL).then(function(response){
             var products = response.data;
             this.setState({products: products});
         }.bind(this));
@@ -23,12 +23,10 @@ export default class Products extends React.Component // definition of the class
 
     onChange(event) // definition of the function addtocart
     {
-        // alert('On change: ' + event.target.name + ' ' + event.target.id);
-        // console.log('On change: ' + event.target.name, event.target.id);
         if(event.target.name=="addtocart")
         {
             var product = JSON.parse(event.target.id);
-            var url = "http://localhost:9000/myapi/cart/addtocart";
+            const URL = "http://localhost:9000/myapi/cart/addtocart";
             var prodQuantity = +$('quantity[id=' + product.id + ']').text();
             var cartItem = {
                 id: product.id,
@@ -39,7 +37,7 @@ export default class Products extends React.Component // definition of the class
             };
             console.log(cartItem);
             $('quantity[id=' + product.id + ']').text(1); // set quantity to zero after button click
-            axios.post(url, {product: cartItem}).then(function(response){console.log(response)});
+            axios.post(URL, {product: cartItem}).then(function(response){console.log(response)});
             alert(product.name + ' added to the cart!');
         }
         if(event.target.name == "plus")

@@ -12545,8 +12545,8 @@ var Products = function (_React$Component) {
         key: "componentDidMount",
         value: function componentDidMount() // definition of the function componentDidMount
         {
-            var url = "http://localhost:9000/myapi/products/getproducts";
-            _axios2.default.get(url).then(function (response) {
+            var URL = "http://localhost:9000/myapi/products/getproducts";
+            _axios2.default.get(URL).then(function (response) {
                 var products = response.data;
                 this.setState({ products: products });
             }.bind(this));
@@ -12556,11 +12556,9 @@ var Products = function (_React$Component) {
         key: "onChange",
         value: function onChange(event) // definition of the function addtocart
         {
-            // alert('On change: ' + event.target.name + ' ' + event.target.id);
-            // console.log('On change: ' + event.target.name, event.target.id);
             if (event.target.name == "addtocart") {
                 var product = JSON.parse(event.target.id);
-                var url = "http://localhost:9000/myapi/cart/addtocart";
+                var URL = "http://localhost:9000/myapi/cart/addtocart";
                 var prodQuantity = +$('quantity[id=' + product.id + ']').text();
                 var cartItem = {
                     id: product.id,
@@ -12571,7 +12569,7 @@ var Products = function (_React$Component) {
                 };
                 console.log(cartItem);
                 $('quantity[id=' + product.id + ']').text(1); // set quantity to zero after button click
-                _axios2.default.post(url, { product: cartItem }).then(function (response) {
+                _axios2.default.post(URL, { product: cartItem }).then(function (response) {
                     console.log(response);
                 });
                 alert(product.name + ' added to the cart!');
