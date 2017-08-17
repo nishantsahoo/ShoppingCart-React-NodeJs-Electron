@@ -15,11 +15,13 @@ class App extends React.Component // definition of the class App
 
     onButtonClick(event) // definition of the function onButtonClick
     {
-        if(event.target.name=="products")
+        const PRODUCTS = "products";
+        const CART = "CART"
+        if(event.target.name==PRODUCTS)
         {
             this.setState({currentComponent: <Products/>});
         }
-        if(event.target.name=="cart")
+        if(event.target.name==CART)
         {
             this.setState({currentComponent: <Cart/>});
         }

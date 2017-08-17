@@ -23,7 +23,10 @@ export default class Products extends React.Component // definition of the class
 
     onChange(event) // definition of the function addtocart
     {
-        if(event.target.name=="addtocart")
+        const ADD_TO_CART = "addtocart";
+        const PLUS = "plus";
+        const MINUS = "minus";
+        if(event.target.name == ADD_TO_CART)
         {
             var product = JSON.parse(event.target.id);
             const URL = "http://localhost:9000/myapi/cart/addtocart";
@@ -40,12 +43,12 @@ export default class Products extends React.Component // definition of the class
             axios.post(URL, {product: cartItem}).then(function(response){console.log(response)});
             alert(product.name + ' added to the cart!');
         }
-        if(event.target.name == "plus")
+        if(event.target.name == PLUS)
         {
             var quantity = +$('quantity[id=' + event.target.id + ']').text();
             $('quantity[id=' + event.target.id + ']').text(++quantity);
         }
-        if(event.target.name == "minus")
+        if(event.target.name == MINUS)
         {
             var quantity = +$('quantity[id=' + event.target.id + ']').text();
             if(quantity>1)

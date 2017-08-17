@@ -45,42 +45,46 @@ export default class Products extends React.Component // definition of the class
 
     onChange(event) // definition of the function addtocart
     {
-        if(event.target.name == "checkout")
+        const CHECKOUT = "checkout";
+        const C_PLUS = "cplus";
+        const C_MINUS = "cminus";
+        const REMOVE = "remove";
+        if(event.target.name == CHECKOUT)
         {
-            var url = "http://localhost:9000/myapi/cart/checkout";
-            axios.post(url, {id: event.target.id}).then(function(response) {});
+            const URL = "http://localhost:9000/myapi/cart/checkout";
+            axios.post(URL, {id: event.target.id}).then(function(response) {});
             alert('Thank you for shopping!');
             setTimeout(function()
             {
                 this.cartRefresh(); // call of the function cartRefresh
             }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
         }
-        if(event.target.name == "cplus")
+        if(event.target.name == C_PLUS)
         {
-            var url = "http://localhost:9000/myapi/cart/incrementcart";
-            axios.post(url, {id: event.target.id}).then(function(response){});
+            const URL = "http://localhost:9000/myapi/cart/incrementcart";
+            axios.post(URL, {id: event.target.id}).then(function(response){});
             setTimeout(function()
             {
                 this.cartRefresh(); // call of the function cartRefresh
             }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
         }
-        if(event.target.name == "cminus")
+        if(event.target.name == C_MINUS)
         {
             var quantity = +$('quantity[id=' + event.target.id + ']').text();
             if(quantity>1)
             {
-                var url = "http://localhost:9000/myapi/cart/decrementcart";
-                axios.post(url, {id: event.target.id}).then(function(response){});
+                const URL = "http://localhost:9000/myapi/cart/decrementcart";
+                axios.post(URL, {id: event.target.id}).then(function(response){});
                 setTimeout(function()
                 {
                     this.cartRefresh(); // call of the function cartRefresh
                 }.bind(this), 150); // delay of 0.15s so that the page can be refreshed
             }
         }
-        if(event.target.name == "remove")
+        if(event.target.name == REMOVE)
         {
-            var url = "http://localhost:9000/myapi/cart/delfromcart";
-            axios.post(url, {id: event.target.id}).then(function(response){});
+            const URL = "http://localhost:9000/myapi/cart/delfromcart";
+            axios.post(URL, {id: event.target.id}).then(function(response){});
             setTimeout(function()
             {
                 this.cartRefresh(); // call of the function cartRefresh
