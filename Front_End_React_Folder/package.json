@@ -7,7 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "webapp": "node express.js",
-    "desktopapp": "electron ."
+    "desktopapp": "electron .",
+    "webpack": ".\\node_modules\\.bin\\webpack",
+    "webpack -w": ".\\node_modules\\.bin\\webpack --watch",
+    "build": ".\\node_modules\\.bin\\webpack",
+    "build --watch": ".\\node_modules\\.bin\\webpack --watch"
   },
   "author": "",
   "license": "ISC",
