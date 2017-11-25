@@ -13704,7 +13704,7 @@ var ProductRow = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         "button",
-                        { className: "red", name: 'minus', id: product.id, onClick: this.onChangeHandler.bind(this), style: { float: 'left' } },
+                        { className: "red", name: 'minus', id: product.id, onClick: this.onChangeHandler.bind(this) },
                         "-"
                     ),
                     _react2.default.createElement(
@@ -13714,7 +13714,7 @@ var ProductRow = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         "button",
-                        { className: "green", name: 'plus', id: product.id, onClick: this.onChangeHandler.bind(this), style: { float: 'right' } },
+                        { className: "green", name: 'plus', id: product.id, onClick: this.onChangeHandler.bind(this) },
                         "+"
                     )
                 ),
