@@ -12521,10 +12521,10 @@ var Products = function (_React$Component) {
         {
             return _react2.default.createElement(
                 "div",
-                null,
+                { className: "container-fluid" },
                 _react2.default.createElement(
                     "div",
-                    { className: "card", style: { width: '50%', marginLeft: '25%', marginTop: '2em', fontFamily: 'monospace' } },
+                    { className: "card", style: { width: '75%', marginLeft: '12.5%', marginTop: '2em', marginBottom: '2em', fontFamily: 'monospace' } },
                     _react2.default.createElement(
                         "div",
                         { className: "card-header", style: { fontSize: '2em' } },
@@ -12535,7 +12535,7 @@ var Products = function (_React$Component) {
                         { className: "card-block", style: { width: '70%', marginLeft: '15%', marginTop: '1em' } },
                         _react2.default.createElement(
                             "div",
-                            { style: { overflowY: 'auto', height: '50%' } },
+                            { style: { overflowY: 'auto' } },
                             this.state.products.map(function (product) {
                                 return _react2.default.createElement(_productsRow2.default, { product: product, eventHandler: this.onChange });
                             }.bind(this))
@@ -13681,16 +13681,16 @@ var ProductRow = function (_React$Component) {
         {
             var product = this.props.product;
             return _react2.default.createElement(
-                "tr",
-                { style: { textAlign: 'center' } },
+                "div",
+                { id: product.id, style: { borderStyle: "solid", borderWidth: '0.5em', marginBottom: "1em" } },
                 _react2.default.createElement(
-                    "td",
+                    "h3",
                     null,
                     "Name: ",
                     product.name
                 ),
                 _react2.default.createElement(
-                    "td",
+                    "h3",
                     null,
                     _react2.default.createElement(
                         "price",
@@ -13700,7 +13700,7 @@ var ProductRow = function (_React$Component) {
                     )
                 ),
                 _react2.default.createElement(
-                    "td",
+                    "h3",
                     null,
                     _react2.default.createElement(
                         "button",
@@ -13719,7 +13719,7 @@ var ProductRow = function (_React$Component) {
                     )
                 ),
                 _react2.default.createElement(
-                    "td",
+                    "h3",
                     null,
                     _react2.default.createElement(
                         "button",

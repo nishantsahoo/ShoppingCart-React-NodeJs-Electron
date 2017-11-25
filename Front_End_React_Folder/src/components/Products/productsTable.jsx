@@ -61,11 +61,11 @@ export default class Products extends React.Component // definition of the class
     render() // definition of the function render
     {
         return (
-            <div>
-                <div className="card" style={{width: '50%', marginLeft: '25%', marginTop: '2em', fontFamily: 'monospace'}}>
+            <div className="container-fluid">
+                <div className="card" style={{width: '75%', marginLeft: '12.5%', marginTop: '2em', marginBottom: '2em' , fontFamily: 'monospace'}}>
                     <div className="card-header" style={{fontSize: '2em'}}>Products</div>
                         <div className="card-block" style={{width: '70%', marginLeft: '15%', marginTop: '1em'}}>
-                            <div style={{overflowY: 'auto', height: '50%'}}>
+                            <div style={{overflowY: 'auto'}}>
                                 {this.state.products.map(function(product){
                                     return (
                                         <ProductRow product={product} eventHandler={this.onChange}/>
