@@ -13682,7 +13682,7 @@ var ProductRow = function (_React$Component) {
             var product = this.props.product;
             return _react2.default.createElement(
                 "div",
-                { id: product.id, style: { borderStyle: "solid", borderWidth: '0.1em', marginBottom: "1em" } },
+                { id: product.id, style: { borderStyle: "solid", borderWidth: '0.01em', borderColor: '#ccc', marginBottom: "1em" } },
                 _react2.default.createElement(
                     "h3",
                     null,
