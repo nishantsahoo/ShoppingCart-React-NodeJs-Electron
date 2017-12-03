@@ -13704,7 +13704,7 @@ var ProductRow = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         "button",
-                        { className: "red", name: 'minus', id: product.id, onClick: this.onChangeHandler.bind(this) },
+                        { className: "red", name: "minus", id: product.id, onClick: this.onChangeHandler.bind(this) },
                         "-"
                     ),
                     _react2.default.createElement(
@@ -13725,6 +13725,30 @@ var ProductRow = function (_React$Component) {
                         "button",
                         { className: "blue", style: { fontFamily: 'monospace' }, name: 'addtocart', id: JSON.stringify(product), onClick: this.onChangeHandler.bind(this) },
                         "Add to Cart"
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "card", style: { width: "20em" } },
+                    _react2.default.createElement("img", { className: "card-img-top", src: "...", alt: "Card image cap" }),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "card-block" },
+                        _react2.default.createElement(
+                            "h4",
+                            { className: "card-title" },
+                            "Card title"
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            { className: "card-text" },
+                            "Some quick example text to build on the card title and make up the bulk of the card's content."
+                        ),
+                        _react2.default.createElement(
+                            "a",
+                            { href: "#", className: "btn btn-primary" },
+                            "Go somewhere"
+                        )
                     )
                 )
             );
