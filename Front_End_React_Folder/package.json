@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
+    "start": "node express.js",
     "webapp": "node express.js",
     "desktopapp": "electron .",
     "webpack": ".\\node_modules\\.bin\\webpack",
@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "electron": "^1.7.9",
     "express": "^4.15.3",
     "form-urlencoded": "^1.5.1",
     "jquery": "^3.2.1",
